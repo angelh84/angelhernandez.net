@@ -248,7 +248,7 @@ $(document).ready(function() {
             };
             newImg.src = imgSrc;
           };
-          getImgSize('http://www.angelsportfolio.com/images/portfolio/large/' + modalImgName + '-1.jpg');
+          getImgSize('http://www.angelhernandez.net/images/portfolio/large/' + modalImgName + '-1.jpg');
         });
 
       };
