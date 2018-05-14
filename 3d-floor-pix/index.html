@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>3D FloorPix</title>
+  <meta name="description" content="">
+
+  <style type="text/css">
+  	div#fp { 
+  		position: relative;
+  		width: 1000px;
+  		height: 500px;
+  		margin: 0 auto;
+  		overflow: hidden;
+  	}
+  	div#fp img { position: absolute; }
+  	div#fp-directional-btns { text-align: center; margin-top: 15px; }
+  	button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+
+<div id="container">
+	<div id="fp"><img src="http://3dfloorpix.com/images/bgslider.jpg" alt="3D Floor Pix"></div>
+	<div id="fp-directional-btns">
+		<button type="button" id="topLeft">1</button>
+		<button type="button" id="topRight">2</button>
+		<button type="button" id="bottomRight">3</button>
+		<button type="button" id="bottomLeft">4</button>
+	</div>
+</div>
+
+<!-- Included JS Files (Compressed) -->
+<script src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		var animateSpeed = 500;
+
+		$('#fp img').css({'top': "-120px", 'left': "-570px"});
+		$('#topLeft').on('click', function(){
+			var fpWidth = $('#fp img').width();
+			var fpHeight = $('#fp img').height();
+			$('#fp img').animate({"top": "-120px", "left": "-570px"}, animateSpeed);
+			
+		});
+		$('#topRight').on('click', function(){
+			var fpWidth = $('#fp img').width();
+			var fpHeight = $('#fp img').height();
+			$('#fp img').animate({"top": "-230px", "left": "-1380px"}, animateSpeed);
+		});
+		$('#bottomRight').on('click', function(){
+			var fpWidth = $('#fp img').width();
+			var fpHeight = $('#fp img').height();
+			$('#fp img').animate({"top": "-766px", "left": "-1480px"}, animateSpeed);
+		});
+		$('#bottomLeft').on('click', function(){
+			var fpWidth = $('#fp img').width();
+			var fpHeight = $('#fp img').height();
+			$('#fp img').animate({"top": "-745px", "left": "-500px"}, animateSpeed);
+		});
+	});
+</script>
+
+
+  
+</body>
+</html>

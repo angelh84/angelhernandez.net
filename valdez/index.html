@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Manuel &amp; Manny Valdez- Structured Settlements</title>
+
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+
+
+	<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+
+	<script src="js/vendor/custom.modernizr.js"></script>
+	<!-- <script src="js/vendor/respond.min.js"></script> -->
+
+
+
+</head>
+<body>
+
+	<div id="debugger" style="display: block; position: fixed; top: 10px; left: 10px; background-color: blue; width: 250px; height: 150px; z-index: 100; color: #fff; font-size: 12px;">
+
+	</div>
+	<header>
+		<div id="header-bg-container" class="full-width">
+			<div id="header-content" class="row">
+				<div id="header-left-column" class="large-3 columns">
+					<nav>
+						<ul id="nav1">
+							<li id="home"><a href="#"><span>Home</span></a></li>
+							<li id="contact"><a href="#"><span>Contact Info</span></a></li>
+							<li id="employment"><a href="#"><span>Employment</span></a></li>						
+						</ul>
+					</nav>
+					<nav>
+						<ul id="nav2">
+							<li><a href="#">General <br>Liabilty</a></li>
+							<li><a href="#">Medical <br>Malpractice</a></li>
+							<li><a href="#">Mass <br>Tort</a></li>
+							<li><a href="#">Structured <br>Settlements</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div id="header-middle-column" class="large-6 columns">
+					<img id="logo" src="img/logo.png" alt="Manuel &amp; Manny Valdez, Certified Structured Settlement Consultants" title="Manuel &amp; Manny Valdez, Certified Structured Settlement Consultants">
+				</div>
+				<div id="header-right-column" class="large-3 columns">
+					<div id="search"><input type="text"></div>
+					<nav>
+						<ul id="nav3">
+							<li><a href="#">Attorney <br>Fees</a></li>
+							<li><a href="#">Workers <br>Compensation</a></li>
+							<li><a href="#">Events</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="main-content" class="full-width">
+		<div id="home-ss">
+			<img src="img/ss/associates.jpg" alt="Associates">
+			<div id="home-interactive-ss">
+
+			</div>
+		</div>
+		<div id="home-testimonials">
+			<div id="testimonials-box"></div>
+		</div>
+	</div>
+
+	<footer>
+		<div id="footer-content" class="row">
+			<div id="footer-left-column" class="large-3 columns">
+				test
+			</div>
+			<div id="footer-middle-column" class="large-6 columns">
+				<img id="logo-footer" src="img/logo-footer.png" alt="Manuel &amp; Manny Valdez, Certified Structured Settlement Consultants" title="Manuel &amp; Manny Valdez, Certified Structured Settlement Consultants">
+			</div>
+			<div id="footer-right-column" class="large-3 columns">
+				test
+			</div>
+		</div>
+	</footer>
+
+
+
+  <!-- Included JS Files (Uncompressed) -->
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/jquery-ui.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+
+
+  <!--
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  <script src="javascripts/jquery.event.move.js"></script>
+  <script src="javascripts/jquery.event.swipe.js"></script>
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  <script src="javascripts/jquery.placeholder.js"></script>
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  <script src="javascripts/jquery.foundation.joyride.js"></script>
+  <script src="javascripts/jquery.foundation.clearing.js"></script>
+  <script src="javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  
+  
+  <!-- Initialize JS Plugins -->
+ 
+
+  <script>
+  	$(document).ready(function(){
+
+		function windowHeight(){
+  			var winHeight = $(window).height();
+  			var docHeight = $(document).height();
+  			var ssContainerHeight = $("#home-ss").height();
+  			var ssContainerOffsetTop = $("#home-ss").offset().top;
+  			var winScrollTop = $(window).scrollTop();
+  			var winScrollTopPercent = winScrollTop / docHeight * 100;
+  			var blackTopOffset = $("#home-interactive-ss").offset().top - ssContainerOffsetTop;
+  			var blackHeight = $("#home-interactive-ss").height();
+
+			$("#debugger").html("<p>Window Height: " + winHeight + "</p> <p>Doc Height: " + docHeight + "</p><p>SS Container Height: " + ssContainerHeight + "</p><p>SS Container Offset Top: " +  ssContainerOffsetTop +  "</p><p>Scroll Top: " + winScrollTop + "</p><p>Black Offset Top From Parent: " + blackTopOffset + "</p><p>Black Height: " + blackHeight + "</p></p><p>Scrolling Percentage: " + winScrollTopPercent + "</p>");
+
+		
+			if ( winHeight + winScrollTop > ssContainerHeight + ssContainerOffsetTop ) { 
+				$("#home-interactive-ss").css({"position": "absolute", "bottom": 10 + "%"});
+			} else {
+				$("#home-interactive-ss").css({"position": "fixed", "bottom": 10 + "%"});
+			};
+		
+
+  		};
+
+  		$("#debugger").animate({backgroundColor: "transparent"}, 2000);
+
+
+/*
+  		function navTrans(){
+  			$("li#home a").hover(function(){
+  				$(this).animate({backgroundColor: "red", color: "#000"}, 500); 
+  			});
+  			
+  		};
+
+  		navTrans();
+*/
+		$(window).load(function(){
+			windowHeight();
+  		});
+		
+  		$(window).scroll(function(){
+  			windowHeight();
+  		});
+
+  		$(window).resize(function(){
+  			windowHeight();
+  		});
+
+		
+  	});
+  </script>
+
+</body>
+</html>

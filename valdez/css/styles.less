@@ -1,0 +1,108 @@
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Home
+:: Media Queries
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+#debugger p { margin: 0;}
+
+body { background-color: #818181; }
+nav a, h1, h2, h3, h4, h5, h6 { font-family: 'Doppio One', sans-serif; }
+ul li { list-style-type: none; list-style-position: inside; line-height: 15px; } 
+
+.full-width { max-width: 100%; }
+
+nav a { color: #e6e6e6; font-size: 0.8em; text-transform: uppercase; }
+nav li { float: left; }
+nav li a { display: block; }
+
+#nav1 {
+	width: 100%;
+	overflow: hidden;
+		a { padding-top: 27px; }
+		a, li {
+			float: left; 
+		}
+		li#home {
+			background: url(../img/nav1-icons.png) no-repeat center -93px;
+				a { background: #fff; display: block; }
+
+		}
+		
+		/*li#home a:hover { background-position: center -93px; }
+		li#contact a { background-position: center 0; }
+		li#contact a:hover { background-position: center -93px; }
+		li#employment a { background-position: center 0; }
+		li#employment a:hover { background-position: center -93px; }*/
+}
+
+#header-bg-container { background: #363636 url(../img/top-bg.png) repeat-x 0 105px; }
+#header-middle-column, #footer-middle-column { text-align: center; }
+#logo { position: relative; z-index: 100; }
+#main-content {
+	position: relative;
+	background-color: #fff;
+	padding: 0;
+	margin-top: -35px;
+}
+#footer-content { background: #363636 url(../img/top-bg.png) repeat-x 0 110px; }
+#footer-middle-column { margin-top: -37px; }
+
+
+/* -----------------------------------------
+   Home Styles
+----------------------------------------- */
+
+#home-ss { position: relative; top: 0; left: 0; min-width: 1200px; width: 100%; }
+#home-ss img { width: 100%; }
+#home-interactive-ss { 
+	width: 100%;
+	height: 250px;
+	background-color: #000;
+    filter:alpha(opacity=60); /* IE */
+    -moz-opacity:0.6; /* Mozilla */
+    opacity: 0.6; /* CSS3 */
+}
+#home-testimonials { width: 100%; overflow: hidden; background-color: #d6d6d6; }
+#testimonials-box { 
+	width: 80%;
+	margin: 60px auto 90px;
+	min-height: 165px;
+	border-top: 1px solid #989898;
+	border-bottom: 1px solid #989898;
+}
+
+
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
+
+/* We use this media query to add styles to any device that supports media queries */
+@media only screen { }
+
+/* Used to alter styles for screens at least 768px wide. This is where the grid changes. */
+@media only screen and (min-width: 768px) {}
+
+/* Used to alter styles for screens at least 1280px wide. */
+@media only screen and (min-width: 1280px) {}
+
+/* Used to alter styles for screens at least 1440px wide. */
+@media only screen and (min-width: 1440px) {}
+
+/* Apply styles to screens in landscape orientation */
+@media only screen and (orientation: landscape) {}
+
+/* Apply styles to screens in portrait orientation */
+@media only screen and (orientation: portrait) {}
+
+/* We also use Modernizr to add a .touch class to the body when applicable */
+/* You can prepend this class to anything and it will style only for touch devices */
+.touch .your-element {}
