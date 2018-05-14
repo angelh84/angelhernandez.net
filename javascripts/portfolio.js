@@ -250,7 +250,6 @@ $(document).ready(function() {
           };
           getImgSize('http://www.angelhernandez.net/images/portfolio/large/' + modalImgName + '-1.jpg');
         });
-
       };
 
       for (var x in portfolioData.websites){
