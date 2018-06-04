@@ -29,7 +29,7 @@
   <header class="row">
     <div class="twelve columns">
       <hgroup>
-        <h1>Angel <span>Hernandez</span></h1>
+        <h1>Angel <span>Hernandez</span> </h1>
         <h2>web design &amp; development</h2>
       </hgroup>
       <nav>
