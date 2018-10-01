@@ -1,0 +1,256 @@
+body.breakdown-open {
+    overflow: hidden;
+}
+
+.pie-chart-table {
+    margin-top: 25px;
+}
+
+.pie-chart-table table {
+    width: 100%;
+    border-top: 1px solid #cecdcc;
+    min-height: 125px;
+}
+
+.pie-chart-table th,
+.pie-chart-table td {
+    padding: 10px;
+    font-weight: 600;
+}
+
+.pie-chart-table th {
+    font-size: 11px;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+.pie-chart-table td {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.pie-chart-table .chargeback-count,
+.pie-chart-table .percentage-total {
+    font-size: 16px;
+}
+
+.reason-code {
+    width: 50%;
+}
+
+.breakdown-button {
+    float: right;
+    margin-top: -25px;
+    background-color: #fff;
+    padding: 10px 25px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.25s;
+}
+
+.breakdown-button:hover {
+    background-color: #f5f5f5;
+}
+
+.breakdown-button i {
+    font-size: 12px;
+    margin-top: -3px;
+    margin-right: 5px;
+}
+
+.analytics-drop-row {
+    margin-bottom: 10px;
+}
+
+.first-row {
+    margin-bottom: 30px;
+}
+
+.chargeback-panel .table-csv,
+.ratio-panel .table-csv {
+    margin-right: 1px;
+}
+
+.chargeback-panel .panel-drop {
+    float: right;
+}
+
+.chargeback-panel .panel-heading,
+.ratio-panel .panel-heading {
+    border-bottom: 1px solid #cecdcc;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.chargeback-panel,
+.ratio-panel {
+    padding-bottom: 10px;
+}
+
+.panel-subheading-box {
+    float: right;
+}
+
+.breakdown-modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.75);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.30s;
+}
+
+.breakdown-modal-bg.active {
+    opacity: 1;
+}
+
+.breakdown-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 20px 25px;
+    width: 100%;
+    box-shadow: -20px 0 65px rgba(0,0,0,0.50);
+    overflow: auto;
+    transition: all 0.40s ease-out;
+}
+
+.breakdown-modal .table-csv {
+    margin-right: 0;
+}
+
+.breakdown-modal .headline-divider {
+    margin-bottom: 20px;
+}
+
+.breakdown-modal .panel-title {
+    padding-right: 65px;
+}
+
+.breakdown-modal .panel-heading {
+    border-bottom: 1px solid #cecdcc;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.breakdown-modal .panel-drop {
+    float: right;
+}
+
+.breakdown-modal .table-csv i {
+    font-size: 15px;
+    vertical-align: bottom;
+}
+
+.select2-container--open .select2-dropdown--below {
+    min-width: 155px;
+}
+
+.headline-divider {
+    width: 90px;
+    height: 2px;
+    background-color: #AFD25C;
+}
+
+.close-breakdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    color: #888;
+}
+
+.close-breakdown:hover {
+    color: #000;
+}
+
+.close-breakdown i {
+    font-size: 20px;
+}
+
+.panel-subheading-box .panel-drop {
+    display: inline-block;
+    float: none;
+}
+
+.ratio-radios {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+
+.forecast-row {
+    margin-top: 25px;
+}
+
+.dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.performance-heading .multiselect-native-select {
+    display: inline-block;
+}
+
+.performance-heading .multiselect.btn-default,
+.count-drop .multiselect.btn-default{
+    border: 0;
+}
+
+.performance-panel,
+.results-panel,
+.alerts-panel {
+    padding-bottom: 10px;
+}
+
+.fourth-row,
+.fifth-row {
+    margin-top: 25px;
+}
+
+.results-stats {
+    border-left: 1px solid #d9d9d9;
+    padding-left: 20px;
+}
+
+.results-stats span {
+    font-size: 10px;
+}
+
+.results-stats p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.fine-print {
+    font-size: 11px;
+    padding-left: 20px;
+}
+
+
+@media(min-width: 769px) {
+    .breakdown-modal {
+        width: 750px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .breakdown-modal {
+        width: 900px;
+    }
+}

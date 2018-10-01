@@ -1,0 +1,239 @@
+.dataTable thead .sorting:after,
+.dataTable thead .sorting:before, .dataTable thead .sorting_asc:after, .dataTable thead .sorting_asc_disabled:after, .dataTable thead .sorting_desc:after, .dataTable thead .sorting_desc_disabled:after {
+    right: 10px;
+}
+
+.actions i {
+    font-size: 14px;
+}
+
+.dataTable {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.table-wrap {
+    border-top: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+}
+
+.table-xlg>thead>tr>th {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table-xlg>tbody>tr>td {
+    padding: 15px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th,
+.table>tfoot>tr>td, .table>tfoot>tr>th,
+.table>thead>tr>td, .table>thead>tr>th {
+    border-left: 1px solid #d9d9d9;
+}
+
+.dataTable td:firstchild {
+    border-left: 0;
+}
+
+.dataTable tr:nth-child(even) {
+    background-color: #f6f6f6; 
+}
+
+.dataTables_paginate {
+    float: none;
+    text-align: center;
+}
+
+.show-hide {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+}
+
+#chargebacks_table_wrapper .search {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#chargebacks_table_wrapper .mids {
+    display: inline-block;
+}
+
+.show-hide-drop.showing {
+    display: block;
+    width: 100%;
+    margin-top: -1px;
+    float: none;
+    border-radius: 0;
+    max-height: 450px;
+    overflow: auto;
+}
+
+.show-hide-button {
+    padding: 10px 15px;
+    border: 1px solid #CECDCC;
+}
+
+.dataTables_paginate .paginate_button.current,
+.dataTables_paginate .paginate_button.current:focus,
+.dataTables_paginate .paginate_button.current:hover {
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid #c3c2c1;
+    color: #000;
+}
+
+.dataTables_paginate .paginate_button {
+    padding: 5px;
+}
+
+.search input {
+    border-radius: 0;
+    height: 42px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow: auto;
+}
+
+.table-top-right {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.table-search-drop {
+    display: inline-block;
+    height: 42px;
+    line-height: 41px;
+    border: 1px solid #CECDCC;
+    border-right: 0;
+    color: #4c4c4c;
+}
+
+.table-search-drop .select2-selection {
+    border: 0;
+}
+
+#chargebacks_table_filter {
+    display: inline-block;
+    float: none;
+    margin: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+    min-width: 130px;
+}
+
+.dataTables_filter input {
+    border: 1px solid #CECDCC;
+}
+
+.mids {
+    height: 42px;
+    line-height: 41px;
+    border: 1px solid #CECDCC;
+}
+
+.mids .select2-selection {
+    border: 0;
+}
+
+.dataTables_length select {
+    border: 0;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.icons {
+    display: inline-block;
+}
+
+.table-csv {
+    margin-right: 15px;
+}
+
+.table-csv i {
+    color: #a3a3a3;
+}
+
+.table-csv + .tooltip .tooltip-inner {
+	padding: 2px 9px;
+	font-size: 12px;
+	background-color: #939598;
+}
+
+.table-csv + .tooltip .tooltip-arrow {
+	border-top-color: #939598;
+}
+
+.table tbody tr:hover {
+	outline: 1px solid #000;
+}
+
+.table>thead:first-child>tr:first-child>th {
+    border-bottom: 0;
+}
+ .table tbody > tr:first-child > td {
+    border-top: 1px solid #ddd;
+}
+
+.table tbody tr:hover {
+    outline: 1px solid #000;
+}
+
+.dataTables_wrapper .bottom {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.dataTables_wrapper {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.actions-btn {
+    border: 0;
+    background-color: transparent;
+}
+
+.actions-btn:hover,
+.actions-btn:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.actions-wrap ul {
+    margin: 0;
+    padding: 0;
+}
+
+.actions-wrap li {
+    list-style-type: none;
+}
+
+.actions-wrap a {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.actions-wrap a:hover {
+    background-color: #f1f1f1;
+}
+
+.popover-content {
+    padding: 5px;
+}
+
+.popover-content a {
+    color: #333 !important;
+}
+
+#source_table_filter {
+    display: inline-block;
+    float: none;
+    margin: 0;
+}

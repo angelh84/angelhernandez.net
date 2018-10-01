@@ -1,0 +1,534 @@
+/*
+* Variables for Midigator Theme
+*/
+
+.ranges {
+    border: 0;
+    box-shadow: none;
+}
+
+.daterangepicker .calendar td,
+.daterangepicker .calendar th {
+    padding: 0;
+    border-radius: 0;
+    font-family: inherit;
+}
+
+.btn-primary#login {
+    background-color: #aed25c;
+    border-color: #aed25c;
+}
+
+.btn-primary#login:hover,
+.btn-primary#login:active {
+    background-color: #92a649;
+    border-color: #92a649;
+}
+
+.btn-primary#login:disabled,
+.btn-primary#login.disabled {
+    background-color: #e7f1ce;
+    border-color: #e7f1ce;
+}
+
+.datepicker-container {
+    position: absolute;
+}
+
+.daterangepicker.dropdown-menu {
+    border-bottom-width: 0px !important;
+    border-right-width: 0px !important;
+    border-left-width: 0px !important;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 0;
+}
+
+.daterangepicker .ranges,
+.daterangepicker .calendar {
+    display: inline-block !important;
+}
+
+.daterangepicker.single {
+    width: auto;
+    height: auto;
+}
+
+.daterangepicker.single .ranges,
+.daterangepicker.single .calendar.right {
+    display: none !important;
+}
+
+.daterangepicker span {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: block;
+}
+
+.daterangepicker table {
+    width: 100%;
+    margin: 0;
+}
+
+.daterangepicker td,
+.daterangepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+.daterangepicker td.day:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+.daterangepicker td.day.disabled {
+    color: #eeeeee;
+}
+
+.daterangepicker td.old,
+.daterangepicker td.new {
+    color: #999999;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.daterangepicker td.active:hover,
+.daterangepicker td.active:hover:hover,
+.daterangepicker td.active:focus,
+.daterangepicker td.active:hover:focus,
+.daterangepicker td.active:active,
+.daterangepicker td.active:hover:active,
+.daterangepicker td.active.active,
+.daterangepicker td.active:hover.active,
+.daterangepicker td.active.disabled,
+.daterangepicker td.active:hover.disabled,
+.daterangepicker td.active[disabled],
+.daterangepicker td.active:hover[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+
+.daterangepicker td.active:active,
+.daterangepicker td.active:hover:active,
+.daterangepicker td.active.active,
+.daterangepicker td.active:hover.active {
+    background-color: #003399 \9;
+}
+
+.daterangepicker td span {
+    display: block;
+    width: 47px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.daterangepicker td span:hover {
+    background: #eeeeee;
+}
+
+.daterangepicker td span.active {
+    color: #ffffff;
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #0044cc;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.daterangepicker td span.active:hover,
+.daterangepicker td span.active:focus,
+.daterangepicker td span.active:active,
+.daterangepicker td span.active.active,
+.daterangepicker td span.active.disabled,
+.daterangepicker td span.active[disabled] {
+    color: #ffffff;
+    background-color: #0044cc;
+    *background-color: #003bb3;
+}
+
+.daterangepicker td span.active:active,
+.daterangepicker td span.active.active {
+    background-color: #003399 \9;
+}
+
+.daterangepicker td span.old {
+    color: #999999;
+}
+
+.daterangepicker th.switch {
+    width: 145px;
+}
+
+.daterangepicker thead tr:first-child th {
+    cursor: pointer;
+}
+
+.daterangepicker thead tr:first-child th:hover {
+    background: #eeeeee;
+}
+
+.daterangepicker .input-append.date .add-on i,
+.daterangepicker .input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.daterangepicker td.active:hover,
+.daterangepicker td.active:hover:hover,
+.daterangepicker td.active:focus,
+.daterangepicker td.active:hover:focus,
+.daterangepicker td.active:active,
+.daterangepicker td.active:hover:active,
+.daterangepicker td.active.active,
+.daterangepicker td.active:hover.active,
+.daterangepicker td.active.disabled,
+.daterangepicker td.active:hover.disabled,
+.daterangepicker td.active[disabled],
+.daterangepicker td.active:hover[disabled] {
+    background: #AFD25C !important;
+}
+
+.daterangepicker td {
+    height: 34px;
+    width: 28px;
+    border-radius: 50%;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    text-shadow: none !important;
+}
+
+.daterangepicker .calendar {
+    float: none !important;
+    width: 266px;
+    border: 0;
+    box-shadow: none;
+}
+
+.daterangepicker .calendar td.active,
+.daterangepicker .calendar td.active:hover {
+    background-color: #4c4c4c;
+}
+
+.daterangepicker .calendar thead {
+    background-color: #4c4c4c;
+    color: inherit;
+}
+
+.daterangepicker .calendar thead tr:first-child th {
+    background-color: #FFFFFF;
+}
+
+.daterangepicker .calendar thead tr:first-child th.available,
+.daterangepicker .calendar thead tr:first-child th.month {
+    background-color: #FFFFFF;
+}
+
+.daterangepicker .calendar thead tr:first-child th.available {
+    color: #CECDCC;
+    border: none;
+}
+
+.daterangepicker .calendar thead tr:first-child th.available:hover {
+    background: #FFFFFF;
+}
+
+.daterangepicker .calendar thead tr:first-child th.month {
+    color: #4c4c4c;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.daterangepicker .calendar thead tr:first-child th.available .fa {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.daterangepicker .calendar thead tr:first-child th.available .fa:hover {
+    color: #a3a3a3;
+}
+
+.daterangepicker .calendar thead tr:nth-child(2) {
+    background-color: #FFFFFF;
+    color: #4c4c4c;
+}
+
+.daterangepicker .calendar tbody td {
+    height: 38px;
+}
+
+.daterangepicker .calendar tbody td,
+.daterangepicker .calendar tbody th {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.daterangepicker .calendar tbody td.in-range {
+    background-color: #f6f6f6;
+}
+
+.daterangepicker .calendar tbody td.in-range:hover {
+    background-color: #f6f6f6;
+}
+
+.daterangepicker .calendar tbody td.active {
+    background-color: #AFD25C;
+    border: none;
+}
+
+.daterangepicker .calendar tbody td:hover {
+    background-color: #E9E9E9;
+    border-radius: 50%;
+}
+
+.daterangepicker .calendar tbody tr td.start-date.end-date {
+    border-radius: 50% !important;
+}
+
+.daterangepicker .calendar tbody tr td.in-range:last-child,
+.daterangepicker .calendar tbody tr td.end-date {
+    border-radius: 0 50% 50% 0;
+}
+
+.daterangepicker .calendar tbody tr td.in-range:first-child,
+.daterangepicker .calendar tbody tr td.start-date {
+    border-radius: 50% 0 0 50%;
+}
+
+.daterangepicker .ranges {
+    float: right !important;
+    width: 200px;
+}
+
+.daterangepicker .ranges ul {
+    padding: 0 0 0 10px;
+    width: 200px;
+}
+
+.daterangepicker .ranges li {
+    width: 180px;
+    background-color: #f6f6f6;
+    color: #a3a3a3;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    border: none;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+}
+
+.daterangepicker .ranges li.active,
+.daterangepicker .ranges li:hover {
+    border: none;
+}
+
+.daterangepicker .ranges li.active {
+    background-color: #AFD25C;
+    border: none;
+}
+
+.daterangepicker .ranges li:hover {
+    color: #a3a3a3;
+    background-color: #E9E9E9;
+    border: none;
+}
+
+.daterangepicker .range_inputs .daterangepicker_start_input label,
+.daterangepicker .range_inputs .daterangepicker_end_input label {
+    color: #4c4c4c;
+    font-size: 14px;
+    line-height: 38px;
+    text-shadow: none;
+    border-top: 1px solid #CECDCC;
+    border-left: 1px solid #CECDCC;
+    border-right: none;
+    border-bottom: 1px solid #CECDCC;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    padding: 0px;
+    text-align: center;
+    width: 66px;
+    text-transform: capitalize;
+    float: left;
+}
+
+.daterangepicker .range_inputs .input-mini {
+    color: #4c4c4c;
+    font-size: 14px;
+    line-height: 19px;
+    text-shadow: none;
+    border: 1px solid #CECDCC;
+    text-align: left;
+    padding-left: 18px;
+    float: left;
+}
+
+.daterangepicker .range_inputs .daterangepicker_start_input,
+.daterangepicker .range_inputs .daterangepicker_end_input,
+.daterangepicker .range_inputs label,
+.daterangepicker .range_inputs input {
+    height: 40px !important;
+}
+
+.daterangepicker .range_inputs label {
+    background-color: #f6f6f6 !important;
+}
+
+.daterangepicker .daterange-footer {
+    height: 40px;
+    background-color: #f6f6f6;
+    width: 100%;
+}
+
+.daterangepicker .daterange-footer button {
+    height: 40px;
+    width: 133px;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 0;
+}
+
+.daterangepicker .daterange-footer button.applyBtn {
+    background-color: #AFD25C;
+}
+
+.daterangepicker .daterange-footer button.cancelBtn {
+    background-color: #a3a3a3;
+}
+
+#date-range {
+    margin: 19px 10px 0 0;
+    float: right;
+}
+
+.daterange {
+    width: 272px;
+    height: 40px;
+    float: right;
+    position: relative;
+    z-index: 100;
+    color: #939598;
+    margin-bottom: 10px;
+    border: 1px solid #c3c2c1;
+}
+
+.daterange::after {
+    content: '\f133';
+    display: block;
+    top: 6px;
+    right: 10px;
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    font-size: 20px;
+    color: #4c4c4c;
+}
+
+.daterange input {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    padding: 1px 16px;
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+    color: #4c4c4c;
+    box-shadow: 1px 2px 2px rgba(1, 1, 1, 0.15);
+}
+
+.midi-daterangepicker ul.active {
+    max-width: 100%;
+}
+
+.midi-daterangepicker ul {
+    background-color: #939598;
+    display: block;
+    height: 40px;
+    margin: 19px 0 0 0;
+    padding: 0;
+    float: right;
+    overflow: hidden;
+    max-width: 0%;
+    transition: max-width 0.5s ease;
+}
+
+.midi-daterangepicker ul li {
+    float: left;
+    display: block;
+    white-space: nowrap;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.midi-daterangepicker ul li a {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.midi-daterangepicker ul li a .fa {
+    font-size: 24px;
+    line-height: 52px;
+    color: #fff;
+    margin-top: -6px;
+}
+
+.midi-daterangepicker .navbar-toggle {
+    height: 40px;
+    width: 40px;
+    float: right;
+    margin-top: 19px;
+    background-color: #939598;
+    border-radius: 0px;
+    padding: 9px 11px;
+    display: block !important;
+}
