@@ -112,6 +112,7 @@
                             </li>
                             <li><a href="analytics.html"><i class="far fa-chart-bar"></i> <span>Analytics</span></a>
                             </li>
+                            <li><a href="accounts.html"><i class="fas fa-university"></i> <span>Accounts</span></a></li>
                             <li class="active"><a href="prevention.html"><i class="fas fa-shield-alt"></i> <span>Prevention</span></a>
                             </li>
                             <li><a href="notifications.html"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
@@ -123,6 +124,7 @@
                                     <li><a href="job_list_panel.html">Preventions</a></li>
                                 </ul>
                             </li>
+                            <li><a href="packages.html"><i class="far fa-file"></i> <span>Packages</span></a></li>
                             <!-- /main -->
                         </ul>
                     </div>
@@ -243,7 +245,8 @@
                                                             <div class="caption">BIN Number</div>
                                                             <div class="amounts">
                                                                 <span id="param_1" class="bin-number"></span>
-                                                                <span id="param_1_hidden" class="bin-number-hidden" style="display:none;"></span>
+                                                                <span id="param_1_hidden" class="bin-number-hidden"
+                                                                      style="display:none;"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -264,7 +267,8 @@
                                                             <div class="amounts">
                                                                 <span id="param_3"
                                                                       class="amount bin-number-chargeback-count"></span>
-                                                                <span id="param_3_hidden" class="amount bin-number-chargeback-count-hidden"
+                                                                <span id="param_3_hidden"
+                                                                      class="amount bin-number-chargeback-count-hidden"
                                                                       style="display:none;"></span>
                                                             </div>
                                                         </div>
@@ -273,9 +277,11 @@
                                                         <div>
                                                             <div class="caption">Percentage of Total</div>
                                                             <div class="amounts">
-                                                                <span id="param_4" class="amount bin-number-percentage"></span>
+                                                                <span id="param_4"
+                                                                      class="amount bin-number-percentage"></span>
                                                                 <span>%</span>
-                                                                <span id="param_4_hidden" class="amount bin-number-percentage-hidden"
+                                                                <span id="param_4_hidden"
+                                                                      class="amount bin-number-percentage-hidden"
                                                                       style="display:none;"></span>
                                                             </div>
                                                         </div>
@@ -368,10 +374,121 @@
                 <!-- /main charts -->
 
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Verifi<sup>&trade;</sup></h6>
+                                <div class="heading-elements">
+                                    <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                    data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                    <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="col-sm-12 datatable-container">
+                                    <table class="table dataTable table-xlg text-nowrap" id="verifi_table">
+                                        <thead>
+                                        <tr>
+                                            <th>Internal Alert ID</th>
+                                            <th>Case ID</th>
+                                            <th>Order ID</th>
+                                            <th>Received Date</th>
+                                            <th>Transaction Date</th>
+                                            <th>Amount</th>
+                                            <th>Currency</th>
+                                            <th>BIN</th>
+                                            <th>Last 4</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>ARN</th>
+                                            <th>Reason Code</th>
+                                            <th>MID</th>
+                                            <th>Descriptor</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Ethoca<sup>&trade;</sup></h6>
+                                <div class="heading-elements">
+                                    <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                    data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                    <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="col-sm-12 datatable-container">
+                                    <table class="table dataTable table-xlg text-nowrap" id="ethoca_table">
+                                        <thead>
+                                        <tr>
+                                            <th>Internal Alert ID</th>
+                                            <th>Case ID</th>
+                                            <th>Order ID</th>
+                                            <th>Received Date</th>
+                                            <th>Transaction Date</th>
+                                            <th>Amount</th>
+                                            <th>Currency</th>
+                                            <th>BIN</th>
+                                            <th>Last 4</th>
+                                            <th>ARN</th>
+                                            <th>Reason Code</th>
+                                            <th>MID</th>
+                                            <th>Descriptor</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Footer -->
                 <div class="footer text-muted">
                 </div>
                 <!-- /footer -->
+
+                <div id="modal_table_help" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h2 class="modal-title">HELP</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>INTERNAL ALERT ID</strong><br>Unique identifier in Midigator database</p>
+                                <p><strong>CASE ID</strong><br>Unique case identifier as provided by Verifi, Ethoca</p>
+                                <p><strong>ORDER ID</strong><br>Unique identifier for the CRM Order associated with the Alert</p>
+                                <p><strong>RECEIVED DATE</strong><br>Date when the Alert was created by Verifi, Ethoca</p>
+                                <p><strong>TRANSACTION DATE</strong><br>Date when the original transaction happened</p>
+                                <p><strong>AMOUNT</strong><br>Amount of the original transaction</p>
+                                <p><strong>CURRENCY</strong><br>Currency of the original transaction</p>
+                                <p><strong>BIN</strong><br>First six digits of number of the credit card used in the original transaction</p>
+                                <p><strong>LAST 4</strong><br>Last four numbers of the credit card used in the original transaction</p>
+                                <p><strong>FIRST NAME</strong><br>Cardholder's first name</p>
+                                <p><strong>LAST NAME</strong><br>Cardholder's last name</p>
+                                <p><strong>ARN</strong><br>The Acquirer Reference Number associated with the transaction (if available)</p>
+                                <p><strong>REASON CODE</strong><br>The reason provided for the chargeback</p>
+                                <p><strong>MID</strong><br>Merchant ID - Unique identifier for the Merchant: it is used to process credit cards</p>
+                                <p><strong>DESCRIPTOR</strong><br>Descriptor associated to the MID through which the transaction was run</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- /content area -->
@@ -397,7 +514,7 @@
 <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
 <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
 <script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
-<script src="assets/js/datatables.min.js"></script>
+<script src="assets/js/tables/jquery.datatable.min.js"></script>
 <!-- /core JS files -->
 
 <!-- Theme JS files -->
@@ -413,73 +530,7 @@
 <script type="text/javascript" src="assets/js/charts/bar.js"></script>
 <script type="text/javascript" src="assets/js/charts/doublePie.js"></script>
 
-<script type="text/javascript">
-
-  pieChart("verifiEthoca", prevention_alert_count_json);
-  barChart("preventionAnalytics", prevention_analytics_marketing_source_json);
-
-  toggleOverlay("Marketing Source");
-
-  $("#prevention_analytics_select").on("change", function(elm) {
-    switch ($(this).val()) {
-      case "Marketing Source":
-        barChart("preventionAnalytics", prevention_analytics_marketing_source_json);
-        break;
-      case "Rebill Cycle":
-        barChart("preventionAnalytics", prevention_analytics_rebill_cycle_json);
-        break;
-      case "Product":
-        barChart("preventionAnalytics", prevention_analytics_product_json);
-        break;
-      case "Country":
-        barChart("preventionAnalytics", prevention_analytics_country_json);
-        break;
-      case "Price Point":
-        doublePieChart("preventionAnalytics", prevention_analytics_price_point_json, 'price-point');
-        setHiddenDefaultLegend("price_point_legends_overlay_preventionAnalytics", prevention_analytics_price_point_json);
-        break;
-      case "BIN Number":
-        doublePieChart("preventionAnalytics", prevention_analytics_bin_number_json, "bin-number");
-        setHiddenDefaultLegend("bin_number_legends_overlay_preventionAnalytics", prevention_analytics_bin_number_json);
-        break;
-    }
-    updatePreventionAnalyticsTitle($(this).val());
-    toggleOverlay($(this).val());
-  });
-
-  function updatePreventionAnalyticsTitle(name) {
-    $("#prevention_analytics_title").html("PREVENTION ANALYTICS - " + name.toUpperCase());
-  }
-
-  function toggleOverlay(series) {
-    $(".graph-overlay").each(function(key, elm) {
-      $(elm).hide();
-      if ($(elm).data('series').includes(series.toLowerCase().replace(" ", "-"))) {
-        $(elm).show();
-      }
-    });
-  }
-
-  function setHiddenDefaultLegend(elm, data) {
-    let overlayData = {};
-    let params = [];
-    for (let i = 0; i < data.length; i++) {
-      if (!overlayData.percentage || Number(data[i].overlay.percentage) > Number(overlayData.percentage)) {
-        overlayData = data[i].overlay;
-      }
-    }
-    if (elm == "bin_number_legends_overlay_preventionAnalytics") {
-      params = [overlayData.legend, overlayData.bank, overlayData.count, overlayData.percentage];
-    } else {
-      params = [overlayData.legend, overlayData.count, overlayData.percentage];
-    }
-    updatePreventionAnalyticsLegend(elm, params, true);
-  }
-
-</script>
-
-
-<script src="assets/js/dashboard.js"></script>
+<script type="text/javascript" src="assets/js/page/prevention.js"></script>
 <script src="assets/js/app.js"></script>
 <!-- /theme JS files -->
 

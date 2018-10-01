@@ -97,3 +97,10 @@ img.logo-ethoca {
 #price_point_legends_overlay_preventionAnalytics {
     top: 230px;
 }
+
+#verifi_table_filter,
+#ethoca_table_filter {
+    display: inline-block;
+    float: none;
+    margin: 0;
+}

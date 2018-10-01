@@ -51,12 +51,12 @@
     margin-left: 20px;
 }
 
-#chargebacks_table_wrapper .search {
+.dataTables_wrapper .search {
     display: inline-block;
     margin-left: 20px;
 }
 
-#chargebacks_table_wrapper .mids {
+.dataTables_wrapper .mids {
     display: inline-block;
 }
 
