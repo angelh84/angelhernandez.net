@@ -116,7 +116,7 @@
     border: 0;
 }
 
-#chargebacks_table_filter {
+.dataTables_filter {
     display: inline-block;
     float: none;
     margin: 0;

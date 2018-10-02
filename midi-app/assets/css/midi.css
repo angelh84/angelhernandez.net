@@ -250,7 +250,8 @@ a:link {
 
 .panel-flat > .panel-heading {
     padding-top: 15px;
-    padding-bottom: 5px;
+	padding-bottom: 5px;
+	min-height: 45px;
 }
 
 .panel-flat>.panel-heading>.panel-title {
@@ -274,6 +275,7 @@ a:link {
 .panel .heading-elements {
 	padding-top: 8px;
 	right: 10px;
+	background-color: transparent;
 }
 
 
