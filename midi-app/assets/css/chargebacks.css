@@ -1,0 +1,32 @@
+.daterange-drop + .select2-container {
+    float: left;
+    width: 160px !important;
+    font-size: 14px;
+    background-color: #fff;
+    transition: all 0.25s;
+    margin-right: -165px;
+}
+
+.daterange-drop + .select2-container.showDateDrop {
+    margin-right: 25px;
+}
+
+.daterange-drop + .select2-container::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    right: -50px;
+    z-index: -1;
+    height: 5px;
+    width: 50px;
+    background-color: #e6e6e6;
+}
+
+.daterange-drop + .select2-container .select2-selection{
+    padding-top: 8px;
+    padding-bottom: 30px;
+}
+
+.daterange-drop + .select2-container .select2-selection--single:not([class*=bg-]):not([class*=border-]) {
+    border-color: #c3c2c1;
+}

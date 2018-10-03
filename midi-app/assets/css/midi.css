@@ -65,7 +65,7 @@ a:link {
 }
 
 .navbar-brand .logo {
-  height: 34px;
+  height: 36px;
   margin: 0;
 }
 
@@ -75,7 +75,20 @@ a:link {
 
 .nav {
 	overflow: hidden;
-	height: 80px;
+	height: 62px;
+}
+
+.nav-tabs.nav-tabs-bottom.bottom-divided {
+	padding: 0 20px 40px 20px;
+	margin-bottom: 0;
+}
+
+.nav-tabs>li>a {
+	padding: 9px 20px;
+}
+
+.nav-tabs.nav {
+	height: 40px;
 }
 
 .navigation {
@@ -499,5 +512,8 @@ button.multiselect {
 		width: 20.4%;
 		padding-top: 10px !important;
 		padding-bottom: 30px !important;
+	}
+	.nav-tabs.nav-tabs-bottom>li.active>a:after {
+		background-color: #AFD25C;
 	}
 }

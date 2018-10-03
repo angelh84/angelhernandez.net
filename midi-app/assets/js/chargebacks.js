@@ -6,60 +6,72 @@ document.addEventListener('DOMContentLoaded', function() {
     //
     // ========================================
 
-    var chargebacks = $('#manager_chargebacks_table').DataTable({
-        "columnDefs": [
-            { 
-                "orderable": false, 
-                "targets": 0,
-                "className": "text-center actions"
+    var $matchTable = $('#match_order_table');
+    var $processTable = $('#process_cb_table');
+    var $pendingTable = $('#pending_cb_table');
+    var $completedTable = $('#completed_cb_table');
+
+    var tableInit = function ($table) {
+        var table = $table.DataTable({
+            "language": {
+                "lengthMenu":     "Display _MENU_ records",
+                "search":         "",
+                "paginate": {
+                    "first":      "First",
+                    "last":       "Last",
+                    "next":       "First",
+                    "previous":   "Last"
+                }
+            },
+            "dom": '<"btn-group pull-right fit-width table-top-right"<"search"f><"show-hide"><"icons">>r<"table-wrap"t><"bottom"ilp><"clear">'
+        });
+
+
+        // ========================================
+        //
+        // Datatable: Show/Hide Drop
+        //
+        // ========================================
+
+    
+        // Handle show-hide drop
+        var $parent = $table.parents('.dataTables_wrapper');
+
+        $parent
+            .find('.show-hide')
+            .html('<button type="button" class="show-hide-button">Show / Hide Columns <i class="icon-arrow-down22"></i></button>')
+            .append(createShowHideDrop($parent));
+
+        $parent.find('.show-hide-button').on('click', function () {
+            $parent.find('.show-hide-drop').toggleClass('showing');
+        });
+
+        // Toggle column visibility
+        $parent.find('.show-hide-check').on('input', function () {
+            var column = table.column($(this).attr('data-index'));
+            column.visible(!column.visible());
+        })
+
+        // Close drop on body click
+        $('body').on('click', function (e) {
+            if(!$(e.target).parents('.show-hide').length){
+                $parent.find('.show-hide-drop').removeClass('showing');
             }
-        ],
-        "order": [[ 2, 'asc' ]],
-        "language": {
-            "lengthMenu":     "Display _MENU_ records",
-            "search":         "",
-            "paginate": {
-                "first":      "First",
-                "last":       "Last",
-                "next":       "First",
-                "previous":   "Last"
-            }
-        },
-        "dom": '<"btn-group pull-right fit-width table-top-right"<"search"f><"show-hide"><"icons">>r<"table-wrap"t><"bottom"ilp><"clear">'
-    });
+        });
+    };
 
-
-    // ========================================
-    //
-    // Datatable: Show/Hide Drop
-    //
-    // ========================================
-
-    // Handle show-hide drop
-    $('.show-hide').html('<button type="button" class="show-hide-button">Show / Hide Columns <i class="icon-arrow-down22"></i></button>');
-    $('.show-hide').append(createShowHideDrop());
-    $('.show-hide-button').on('click', function () {
-        $('.show-hide-drop').toggleClass('showing')
-    });
-
-    // Toggle column visibility
-    $('.show-hide-check').on('input', function () {
-        var column = chargebacks.column($(this).attr('data-index'));
-        column.visible(!column.visible());
-    })
-
-    // Close drop on body click
-    $('body').on('click', function (e) {
-        if(!$(e.target).parents('.show-hide').length){
-            $('.show-hide-drop').removeClass('showing')
-        }
-    });
+    // INIT ALL TABLES
+    tableInit($matchTable);
+    tableInit($processTable);
+    tableInit($pendingTable);
+    tableInit($completedTable);
+    
 
     // Build Show / Hide dropdown
-    function createShowHideDrop () {
+    function createShowHideDrop ($target) {
         var i = 0;
         var $dropUl = $('<ul/>').addClass('dropdown-menu show-hide-drop');
-        var tableHeaders = getTableHeaders();
+        var tableHeaders = getTableHeaders($target);
 
         for (i; i < tableHeaders.length; i++) {
             var $dropLi = $('<li/>').addClass('checkbox');
@@ -85,28 +97,62 @@ document.addEventListener('DOMContentLoaded', function() {
     //
     // ========================================
 
-    var searchDrop = '<div class="table-search-drop">' +
-        '<select class="select table-search-select">' +
-            searchDropOptions().html() +
-        '</select>' +
-    '</div>';
-
-    function searchDropOptions () {
+    var searchDrop = function ($target) {
+        return '<div class="table-search-drop">' +
+          '<select class="select table-search-select">' +
+              searchDropOptions($target).html() +
+          '</select>' +
+        '</div>';
+      } 
+  
+    function searchDropOptions ($target) {
         var i = 0;
         var $dropUl = $('<ul/>');
-        var tableHeaders = getTableHeaders();
+        var tableHeaders = getTableHeaders($target);
 
-        $dropUl.append(new Option('Search By', 'all'))
+        $dropUl.append(new Option('Search by', 'all'))
         for (i; i < tableHeaders.length; i++) {
             var $li = new Option(tableHeaders[i], tableHeaders[i]);
             $dropUl.append($li)
         }
         return $dropUl;
     }
-    $('.search').prepend(searchDrop)
+  
+    $matchTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($matchTable));
 
+    $processTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($processTable));
 
+    $pendingTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($pendingTable));
 
+    $completedTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($completedTable));
+    
+    // ========================================
+    //
+    // Daterange drop
+    //
+    // ========================================
+
+    $('.tab').on('click', function () {
+        var $daterangeDrop = $('.daterange-drop').siblings('.select2-container');
+        if ($(this).hasClass('showDateDrop')) {
+            $daterangeDrop.addClass('showDateDrop');
+        } else {
+            $daterangeDrop.removeClass('showDateDrop');
+        }
+    })
+  
     // ========================================
     //
     // Misc.
@@ -114,22 +160,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     // Get TH text in arr
-    function getTableHeaders () {
+    function getTableHeaders ($target) {
         var tableHeaders = [];
 
-        $('.table-wrap').find('th').each(function (index, item) {
+        $target.find('th').each(function (index, item) {
             tableHeaders.push($(item).text());
         });
         return tableHeaders;
     }
 
     // Styled checkboxes/radios
-	$('.styled').uniform();
+    $('.styled').uniform();
 
-	// Switchery toggles
-	var toggle = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
-	
-	toggle.forEach(function(html) {
-		var switchery = new Switchery(html);
-    });
+
+    
 });
