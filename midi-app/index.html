@@ -1,541 +1,1068 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Midigator - Dashboard</title>
 
-	<!-- Global stylesheets -->
-	<link href="assets/css/FontAwesome.css" rel="stylesheet">
-	<link href="global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/core.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/daterange.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/midi.css" rel="stylesheet" type="text/css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Midigator - Dashboard</title>
+
+    <!-- Global stylesheets -->
+    <link href="assets/css/FontAwesome.css" rel="stylesheet">
+    <link href="global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/daterange.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/midi.css" rel="stylesheet" type="text/css">
     <link href="assets/css/charts.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 </head>
 
 <body class="navbar-top sidebar-xs">
 
-<!-- Main navbar -->
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
-        <div class="demo-drop-container">
-            <select class="select">
-                <option value="demo1">(1) Demo</option>
-                <option value="demo2">(2) Demo</option>
-                <option value="demo3">(3) Demo</option>
-        </select>
+    <!-- Main navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
+            <div class="demo-drop-container">
+                <select class="select">
+                    <option value="demo1">(1) Demo</option>
+                    <option value="demo2">(2) Demo</option>
+                    <option value="demo3">(3) Demo</option>
+                </select>
+            </div>
+
+            <ul class="nav navbar-nav visible-xs-block">
+                <li class="hidden-xs"><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a>
+                </li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
         </div>
 
-        <ul class="nav navbar-nav visible-xs-block">
-            <li class="hidden-xs"><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a>
-            </li>
-            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
-        </ul>
-    </div>
-
-    <div class="navbar-collapse collapse" id="navbar-mobile">
-        <ul class="nav navbar-nav navbar-right">
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-right">
 
 
-            <div class="midi-daterangepicker">
-                <button type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="box">
+                <div class="midi-daterangepicker">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="box">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </span>
-                </button>
-                <ul>
-                    <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="https://app.midigator.com/profile" data-original-title="My Account">
-                            <span class="fa fa-user"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="https://app.midigator.com/help" data-original-title="Help &amp; FAQ">
-                            <span class="fa fa-question-circle"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="https://app.midigator.com/logout" data-original-title="Log Out">
-                            <span class="fa fa-sign-out-alt"></span></a>
-                    </li>
-                </ul>
+                    </button>
+                    <ul>
+                        <li>
+                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://app.midigator.com/profile"
+                                data-original-title="My Account">
+                                <span class="fa fa-user"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://app.midigator.com/help"
+                                data-original-title="Help &amp; FAQ">
+                                <span class="fa fa-question-circle"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://app.midigator.com/logout"
+                                data-original-title="Log Out">
+                                <span class="fa fa-sign-out-alt"></span></a>
+                        </li>
+                    </ul>
 
-                <section id="date-range">
-                    <form class="form-inline" _lpchecked="1">
+                    <section id="date-range">
+                        <form class="form-inline" _lpchecked="1">
 
-                        <div id="midigator-daterange" class="form-group daterange-capsule pull-right">
-                            <div class="daterange">
-                                <input type="text" name="daterange" readonly="" autocomplete="off">
+                            <div id="midigator-daterange" class="form-group daterange-capsule pull-right">
+                                <div class="daterange">
+                                    <input type="text" name="daterange" readonly="" autocomplete="off">
+                                </div>
+                                <input type="hidden" id="hidden_d1" value="2018-09-01">
+                                <input type="hidden" id="hidden_d2" value="2018-09-30">
+                                <input type="hidden" id="hidden_save" value="1">
                             </div>
-                            <input type="hidden" id="hidden_d1" value="2018-09-01">
-                            <input type="hidden" id="hidden_d2" value="2018-09-30">
-                            <input type="hidden" id="hidden_save" value="1">
-                        </div>
-                    </form>
-                </section>
-            </div>
-
-        </ul>
-    </div>
-
-</div>
-<!-- /main navbar -->
-
-
-<!-- Page container -->
-<div class="page-container">
-
-    <!-- Page content -->
-    <div class="page-content">
-
-        <!-- Main sidebar -->
-        <div class="sidebar sidebar-main sidebar-fixed">
-            <div class="sidebar-content">
-                <!-- Main navigation -->
-                <div class="sidebar-category sidebar-category-visible">
-                    <div class="category-content no-padding">
-                        <ul class="navigation navigation-main navigation-accordion">
-                            <!-- Main -->
-                            <li class="active">
-                                <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
-                            </li>
-                            <li>
-                                <a href="analytics.html"><i class="far fa-chart-bar"></i> <span>Analytics</span></a>
-                            </li>
-                            <li>
-                                <a href="prevention.html"><i class="fas fa-shield-alt"></i> <span>Prevention</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
-                            </li>
-                            <li>
-                                <a href="chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
-                            </li>
-                            <!-- /main -->
-                        </ul>
-                    </div>
+                        </form>
+                    </section>
                 </div>
-                <!-- /main navigation -->
 
-            </div>
+            </ul>
         </div>
-        <!-- /main sidebar -->
+
+    </div>
+    <!-- /main navbar -->
 
 
-        <!-- Main content -->
-        <div class="content-wrapper">
+    <!-- Page container -->
+    <div class="page-container">
 
-            <!-- Page header -->
-            <div class="page-header">
-                <div class="page-header-content">
-                    <div class="page-title">
-                        <h1>DASHBOARD</h1>
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main sidebar-fixed">
+                <div class="sidebar-content">
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+                                <!-- Main -->
+                                <li class="active">
+                                    <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a href="analytics.html"><i class="far fa-chart-bar"></i> <span>Analytics</span></a>
+                                </li>
+                                <li>
+                                    <a href="prevention.html"><i class="fas fa-shield-alt"></i> <span>Prevention</span></a>
+                                </li>
+                                <li>
+                                    <a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
+                                </li>
+                                <li>
+                                    <a href="chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+                                </li>
+                                <!-- /main -->
+                            </ul>
+                        </div>
                     </div>
+                    <!-- /main navigation -->
+
                 </div>
             </div>
-            <!-- /page header -->
+            <!-- /main sidebar -->
 
 
-            <!-- Content area -->
-            <div class="content">
+            <!-- Main content -->
+            <div class="content-wrapper">
 
-                <!-- Main charts -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <!-- chargeback count -->
-                        <div class="panel panel-flat">
-                            <div class="panel-heading">
-                                <h6 class="panel-title">CHARGEBACK COUNT</h6>
-                                <div class="heading-elements">
-                                    <button class="panel-question" data-message="This is a look at the number of chargebacks by credit card in your selected date range. You can choose to view chargebacks for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i class="fas fa-question-circle"></i></button>
+                <!-- Page header -->
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h1>DASHBOARD</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page header -->
+
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Main charts -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- chargeback count -->
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">CHARGEBACK COUNT</h6>
+                                    <div class="heading-elements">
+                                        <button class="panel-question" data-message="This is a look at the number of chargebacks by credit card in your selected date range. You can choose to view chargebacks for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i
+                                                class="fas fa-question-circle"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="graph-and-legend" style="margin-top: 10px;">
-                                            <div class="container">
-                                                <div id="chargeback_count"></div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="graph-and-legend" style="margin-top: 10px;">
+                                                <div class="container">
+                                                    <div id="chargeback_count"></div>
+                                                </div>
                                             </div>
+                                            <div class="containerLoading" style="display: block;"></div>
                                         </div>
-                                        <div class="containerLoading" style="display: block;"></div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- /chargeback count -->
                         </div>
-                        <!-- /chargeback count -->
-                    </div>
 
-                    <div class="col-lg-6">
+                        <div class="col-lg-6">
 
-                        <!-- chargeback ratio -->
-                        <div class="panel panel-flat">
-                            <div class="panel-heading">
-                                <h6 class="panel-title">CHARGEBACK RATIO</h6>
-                                <div class="heading-elements">
-                                    <div class="panel-drop">
-                                        <select class="select">
-                                            <option value="total">Total</option>
-                                            <option value="visa">Visa</option>
-                                            <option value="matercard">MasterCard</option>
-                                            <option value="discover">Discover</option>
-                                            <option value="amex">American Express</option>
-                                        </select>
+                            <!-- chargeback ratio -->
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">CHARGEBACK RATIO</h6>
+                                    <div class="heading-elements">
+                                        <div class="panel-drop">
+                                            <select class="select">
+                                                <option value="total">Total</option>
+                                                <option value="visa">Visa</option>
+                                                <option value="matercard">MasterCard</option>
+                                                <option value="discover">Discover</option>
+                                                <option value="amex">American Express</option>
+                                            </select>
+                                        </div>
+                                        <button class="panel-question" data-message="This is a look at your chargeback ratio plotted on the graph by count and dollar amount. You can either view all accounts at once or view one credit card at a time. You can also toggle between the count and dollar amount icons or leave both on for comparison."><i
+                                                class="fas fa-question-circle"></i></button>
                                     </div>
-                                    <button class="panel-question" data-message="This is a look at your chargeback ratio plotted on the graph by count and dollar amount. You can either view all accounts at once or view one credit card at a time. You can also toggle between the count and dollar amount icons or leave both on for comparison."><i class="fas fa-question-circle"></i></button>
                                 </div>
-                            </div>
 
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-sm-12">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
 
-                                        <div class="graph-and-legend" style="margin-top: 4px;">
-                                            <div class="container">
-                                                <div class="graph-and-legend" id="chargeback_ratio"></div>
+                                            <div class="graph-and-legend" style="margin-top: 4px;">
+                                                <div class="container">
+                                                    <div class="graph-and-legend" id="chargeback_ratio"></div>
+                                                </div>
                                             </div>
+                                            <div class="containerLoading" style="display: block;"></div>
                                         </div>
-                                        <div class="containerLoading" style="display: block;"></div>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- /chargeback ratio -->
+
                         </div>
                     </div>
-                    <!-- /chargeback ratio -->
-
-                </div>
-            </div>
-            <!-- /main charts -->
+                    <!-- /main charts -->
 
 
-            <!-- forecast -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h6 class="panel-title"><span class="month"></span> <span class="year"></span> FORECAST
-                            </h6>
-                            <div class="heading-elements">
-                                <button class="panel-question" data-message="This is a forecasted look at your potential chargebacks for the current month. Please note that this always displays a projection for the current month regardless of the date range selected."><i class="fas fa-question-circle"></i></button>
-                            </div>
-                        </div>
+                    <!-- forecast -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><span class="month"></span> <span class="year"></span>
+                                        FORECAST
+                                    </h6>
+                                    <div class="heading-elements">
+                                        <button class="panel-question" data-message="This is a forecasted look at your potential chargebacks for the current month. Please note that this always displays a projection for the current month regardless of the date range selected."><i
+                                                class="fas fa-question-circle"></i></button>
+                                    </div>
+                                </div>
 
-                        <div class="table-responsive">
-                            <table class="forecast-table table table-xlg text-nowrap">
-                                <tbody>
-                                <tr>
-                                    <td class="text-center">
-                                        <div class="total">
-                                            <span class="num">2</span>
-                                            <span class="title">Total Count</span>
-                                        </div>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <div class="visa">
-                                            <span class="num">1</span>
-                                            <span class="title">VISA</span>
-                                        </div>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <div class="mastercard">
-                                            <span class="num">1</span>
-                                            <span class="title">MasterCard</span>
-                                        </div>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <div class="discover">
-                                            <span class="num">0</span>
-                                            <span class="title">Discover</span>
-                                        </div>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <div class="amex">
-                                            <span class="num">0</span>
-                                            <span class="title">Amex</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /forecast -->
-
-            <!-- chargeback data -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h6 class="panel-title">MERCHANT ACCOUNT CHARGEBACK DATA</h6>
-                            <div class="heading-elements">
-                                <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
-                                        data-placement="top"><i class="icon-floppy-disk"></i></button>
-                                <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
-                            </div>
-                        </div>
-                        
-
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <table id="chargebacks_table" class="display table table-xlg text-nowrap">
-                                        <thead>
-                                        <tr>
-                                            <th>Actions</th>
-                                            <th>MID</th>
-                                            <th>Alias</th>
-                                            <th>Gateways</th>
-                                            <th>Visa Ratio</th>
-                                            <th>MC #</th>
-                                            <th>Visa #</th>
-                                            <th>MC Ratio</th>
-                                            <th>Transactions</th>
-                                            <th>Total Sales</th>
-                                            <th>Total CB $</th>
-                                            <th>CB #</th>
-                                            <th>CB Ratio</th>
-                                            <th>$ Ratio</th>
-                                        </tr>
-                                        </thead>
+                                <div class="table-responsive">
+                                    <table class="forecast-table table table-xlg text-nowrap">
                                         <tbody>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">534703590400610</a></td>
-                                            <td>OEM-SS-PD-100</td>
-                                            <td>913 | 917 | 919 | 920 | 921</td>
-                                            <td>100%</td>
-                                            <td>16</td>
-                                            <td>28</td>
-                                            <td>3.03%</td>
-                                            <td>5</td>
-                                            <td>600.64</td>
-                                            <td>2,117.69</td>
-                                            <td>54</td>
-                                            <td>1080%</td>
-                                            <td>352.57%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">9287432</a></td>
-                                            <td>OEM Vantiv</td>
-                                            <td>922</td>
-                                            <td>2.31%</td>
-                                            <td>36</td>
-                                            <td>26</td>
-                                            <td>6.46%</td>
-                                            <td>1844</td>
-                                            <td>74,840.33</td>
-                                            <td>3,262.81</td>
-                                            <td>83</td>
-                                            <td>4.5%</td>
-                                            <td>4.37%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">154948</a></td>
-                                            <td>WNI-Saffron-PAC-IRE-$100-N (USD)</td>
-                                            <td>545 | 547 | 549</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">287292</a></td>
-                                            <td>WNI*Nutra/Ketone-PAC-IRE-£100-N (GBP)</td>
-                                            <td>559 | 561 | 563</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">312116</a></td>
-                                            <td>WNI*Nutra-PAC-IRE-£100-N (GBP)</td>
-                                            <td>553 | 555 | 557</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">431957</a></td>
-                                            <td>BC-T-BuyHealth/-PAC-IRE-$100-N (USD)</td>
-                                            <td>541</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn" data-popup="popover" data-trigger="focus" data-html="true" data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i class="fas fa-bars"></i></button></div></td>
-                                            <td><a href="#">MEO Stripe</a></td>
-                                            <td>MEO Stripe</td>
-                                            <td>924</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0</td>
-                                            <td>0.00</td>
-                                            <td>0.00</td>
-                                            <td>0</td>
-                                            <td>0%</td>
-                                            <td>0%</td>
-                                        </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="total">
+                                                        <span class="num">2</span>
+                                                        <span class="title">Total Count</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <div class="visa">
+                                                        <span class="num">1</span>
+                                                        <span class="title">VISA</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <div class="mastercard">
+                                                        <span class="num">1</span>
+                                                        <span class="title">MasterCard</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <div class="discover">
+                                                        <span class="num">0</span>
+                                                        <span class="title">Discover</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <div class="amex">
+                                                        <span class="num">0</span>
+                                                        <span class="title">Amex</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- /chargeback data -->
+                    <!-- /forecast -->
 
-            <!-- Footer -->
-            <div class="footer text-muted">
-            </div>
-            <!-- /footer -->
+                    <!-- chargeback data -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">MERCHANT ACCOUNT CHARGEBACK DATA</h6>
+                                    <div class="heading-elements">
+                                        <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                            data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                        <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i
+                                                class="fas fa-question-circle"></i></button>
+                                    </div>
+                                </div>
 
-            <div id="modal_table_help" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h2 class="modal-title">HELP</h2>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>ACTIONS</strong><br>List of actions available to the user</p>
-                            <p><strong>PORTAL STATUS</strong><br>It show the status for the Portal supporting the corresponding MID (Active, Inactive, Paused)</p>
-                            <p><strong>MID</strong><br>Merchant Identification Number</p>
-                            <p><strong>ALIAS</strong><br>User defined intuitive name for the Merchant Identifier</p>
-                            <p><strong>GATEWAYS</strong><br>List of Gateways ID associated to the MID</p>
-                            <p><strong>TRANSACTIONS</strong><br>Total number of Transactions in the specified window of time</p>
-                            <p><strong>CB #</strong><br>Total number of Chargeback in the specified window of time</p>
-                            <p><strong>VISA #</strong><br>Total number of VISA Chargebacks in the specified window of time</p>
-                            <p><strong>VISA TX</strong><br>Total number of VISA Transactions in the specified window of time</p>
-                            <p><strong>VISA RATIO</strong><br>Ratio of Chargebacks to Transaction (VISA)</p>
-                            <p><strong>MC #</strong><br>Total number of Mastercard Chargebacks in the specified window of time</p>
-                            <p><strong>MC TX</strong><br>Total number of Mastercard Transactions in the specified window of time</p>
-                            <p><strong>MC LAST MONTH TX</strong><br>Total number of Mastercard Transactions happened last month</p>
-                            <p><strong>MC RATIO</strong><br>Ratio of Chargebacks to Transaction (MasterCard)</p>
-                            <p><strong>AMEX #</strong><br>Total number of AmericanExpress Chargebacks in the specified window of time</p>
-                            <p><strong>AMEX TX</strong><br>Total number of AmericanExpress Transactions in the specified window of time</p>
-                            <p><strong>AMEX RATIO</strong><br>Ratio of Chargebacks to Transaction (AmericanExpress)</p>
-                            <p><strong>DISC #</strong><br>Total number of Discover Chargebacks in the specified window of time</p>
-                            <p><strong>DISC TX</strong><br>Total number of Discover Transactions in the specified window of time</p>
-                            <p><strong>DISC RATIO</strong><br>Ratio of Chargebacks to Transaction (Discover)</p>
-                            <p><strong>TOTAL SALES</strong><br>Total amount of sales in the specified time window of time</p>
-                            <p><strong>TOTAL CB $</strong><br>Total amount of money associated to Chargebacks in the specified time window of time</p>
-                            <p><strong>CB RATIO</strong><br>Ratio of Total Chargebacks to Total Transactions in the specified window of time</p>
-                            <p><strong>$ RATIO</strong><br>Ratio of Total Chargebacks Amount to Total Transactions Amount in the specified window of time</p>
-                            <p><strong>TX NEEDED</strong><br>Number of transactions needed to meet the desired Chargeback Ratio</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="chargebacks_table" class="display table table-xlg text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Actions</th>
+                                                        <th>MID</th>
+                                                        <th>Alias</th>
+                                                        <th>Gateways</th>
+                                                        <th>Visa Ratio</th>
+                                                        <th>MC #</th>
+                                                        <th>Visa #</th>
+                                                        <th>MC Ratio</th>
+                                                        <th>Transactions</th>
+                                                        <th>Total Sales</th>
+                                                        <th>Total CB $</th>
+                                                        <th>CB #</th>
+                                                        <th>CB Ratio</th>
+                                                        <th>$ Ratio</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">534703590400610</a></td>
+                                                        <td>OEM-SS-PD-100</td>
+                                                        <td>913 | 917 | 919 | 920 | 921</td>
+                                                        <td>100%</td>
+                                                        <td>16</td>
+                                                        <td>28</td>
+                                                        <td>3.03%</td>
+                                                        <td>5</td>
+                                                        <td>600.64</td>
+                                                        <td>2,117.69</td>
+                                                        <td>54</td>
+                                                        <td>1080%</td>
+                                                        <td>352.57%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">9287432</a></td>
+                                                        <td>OEM Vantiv</td>
+                                                        <td>922</td>
+                                                        <td>2.31%</td>
+                                                        <td>36</td>
+                                                        <td>26</td>
+                                                        <td>6.46%</td>
+                                                        <td>1844</td>
+                                                        <td>74,840.33</td>
+                                                        <td>3,262.81</td>
+                                                        <td>83</td>
+                                                        <td>4.5%</td>
+                                                        <td>4.37%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">154948</a></td>
+                                                        <td>WNI-Saffron-PAC-IRE-$100-N (USD)</td>
+                                                        <td>545 | 547 | 549</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">287292</a></td>
+                                                        <td>WNI*Nutra/Ketone-PAC-IRE-£100-N (GBP)</td>
+                                                        <td>559 | 561 | 563</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">312116</a></td>
+                                                        <td>WNI*Nutra-PAC-IRE-£100-N (GBP)</td>
+                                                        <td>553 | 555 | 557</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">431957</a></td>
+                                                        <td>BC-T-BuyHealth/-PAC-IRE-$100-N (USD)</td>
+                                                        <td>541</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div>
+                                                        </td>
+                                                        <td><a href="#">MEO Stripe</a></td>
+                                                        <td>MEO Stripe</td>
+                                                        <td>924</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0</td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td>0</td>
+                                                        <td>0%</td>
+                                                        <td>0%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- /chargeback data -->
+
+                    <!-- Footer -->
+                    <div class="footer text-muted">
+                    </div>
+                    <!-- /footer -->
+
+
+                    <!-- notifications pop -->
+                    <div class="notifications-pop">
+                        <div class="notifications-wrap">
+                            <button class="add-notification-button">Add Notification</button>
+                            <h2>CURRECT NOTIFICATIONS</h2>
+                            <div class="notification-holder"></div>
+                            <div class="notification-check">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="styled">
+                                        Send Daily Chargeback Report
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="notification-check">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="styled">
+                                        Send Daily Prevention Report
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /notifications pop -->
+
+                    <div id="modal_table_help" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h2 class="modal-title">HELP</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>ACTIONS</strong><br>List of actions available to the user</p>
+                                    <p><strong>PORTAL STATUS</strong><br>It show the status for the Portal supporting
+                                        the corresponding MID (Active, Inactive, Paused)</p>
+                                    <p><strong>MID</strong><br>Merchant Identification Number</p>
+                                    <p><strong>ALIAS</strong><br>User defined intuitive name for the Merchant
+                                        Identifier</p>
+                                    <p><strong>GATEWAYS</strong><br>List of Gateways ID associated to the MID</p>
+                                    <p><strong>TRANSACTIONS</strong><br>Total number of Transactions in the specified
+                                        window of time</p>
+                                    <p><strong>CB #</strong><br>Total number of Chargeback in the specified window of
+                                        time</p>
+                                    <p><strong>VISA #</strong><br>Total number of VISA Chargebacks in the specified
+                                        window of time</p>
+                                    <p><strong>VISA TX</strong><br>Total number of VISA Transactions in the specified
+                                        window of time</p>
+                                    <p><strong>VISA RATIO</strong><br>Ratio of Chargebacks to Transaction (VISA)</p>
+                                    <p><strong>MC #</strong><br>Total number of Mastercard Chargebacks in the specified
+                                        window of time</p>
+                                    <p><strong>MC TX</strong><br>Total number of Mastercard Transactions in the
+                                        specified window of time</p>
+                                    <p><strong>MC LAST MONTH TX</strong><br>Total number of Mastercard Transactions
+                                        happened last month</p>
+                                    <p><strong>MC RATIO</strong><br>Ratio of Chargebacks to Transaction (MasterCard)</p>
+                                    <p><strong>AMEX #</strong><br>Total number of AmericanExpress Chargebacks in the
+                                        specified window of time</p>
+                                    <p><strong>AMEX TX</strong><br>Total number of AmericanExpress Transactions in the
+                                        specified window of time</p>
+                                    <p><strong>AMEX RATIO</strong><br>Ratio of Chargebacks to Transaction
+                                        (AmericanExpress)</p>
+                                    <p><strong>DISC #</strong><br>Total number of Discover Chargebacks in the specified
+                                        window of time</p>
+                                    <p><strong>DISC TX</strong><br>Total number of Discover Transactions in the
+                                        specified window of time</p>
+                                    <p><strong>DISC RATIO</strong><br>Ratio of Chargebacks to Transaction (Discover)</p>
+                                    <p><strong>TOTAL SALES</strong><br>Total amount of sales in the specified time
+                                        window of time</p>
+                                    <p><strong>TOTAL CB $</strong><br>Total amount of money associated to Chargebacks
+                                        in the specified time window of time</p>
+                                    <p><strong>CB RATIO</strong><br>Ratio of Total Chargebacks to Total Transactions in
+                                        the specified window of time</p>
+                                    <p><strong>$ RATIO</strong><br>Ratio of Total Chargebacks Amount to Total
+                                        Transactions Amount in the specified window of time</p>
+                                    <p><strong>TX NEEDED</strong><br>Number of transactions needed to meet the desired
+                                        Chargeback Ratio</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="add_notification_modal" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h2 class="modal-title">HELP</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="form_alert">
+                                        <input type="hidden" id="alert_id" name="alert_id" value="0">
+
+                                        <div class="form-group">
+                                            <label for="alert_name">
+                                                Name
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="This is a descriptive name to help you identify your notification."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <input type="text" class="form-control" name="alert_name" id="alert_name"
+                                                autocomplete="off" required="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="midSelectAlert">
+                                                MID
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="This allows you to filter the formula to only apply to a specific MID, or to apply to all MIDs as necessary."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <select class="form-control selectpicker midSelect bs-select-hidden"
+                                                data-use-id-as-value="true" data-size="25" id="midSelectAlert" required=""
+                                                multiple="" name="mid">
+                                                <option value="all">All MIDs</option>
+                                                <option value="1550">1002207990 | L-T-Healthy/3-CC-SBM-$100-N</option>
+                                                <option value="1551">1002208040 | T-Glow/3-CC-SBM-$100-N</option>   
+                                                <option value="1052">RARELUCK | RL-T-rareluck/2-MACT-ONE-$100-N</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select show-tick form-control midSelect"><button
+                                                    type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                                    data-id="midSelectAlert" title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                                        selected</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner" role="menu">
+                                                        <li data-original-index="0"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">All MIDs</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">00000000 |
+                                                                    TestAlias</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">000000000 |
+                                                                    TestAlias</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">0000000000 |
+                                                                    TestAlias</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="4"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">100002550 |
+                                                                    HZN-T-Health-VPS-DEU-$200</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="5"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">100002899 |
+                                                                    Great/11-PW-FRI-$100-N*TRNSFD*</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="6"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">1002201680 |
+                                                                    LC-T-For-CC-SBM-$100-N</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="7"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">1002201690 |
+                                                                    T-Myrelu/3-CC-SBM-$100-N</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">
+                                                If
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="This is the first data point to use in the comparison."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <select class="form-control selectpicker bs-select-hidden" id="alertOptionsSelect"
+                                                required="" name="alert_options_select">
+                                                <option value="">Select option</option>
+                                                <option value="12">Chargeback dollar ratio (all)</option>
+                                                <option value="7">AMEX chargeback count</option>
+                                                <option value="8">AMEX chargeback ratio</option>
+                                                <option value="17">AMEX transaction count</option>
+                                                <option value="9">Chargeback count (all)</option>
+                                                <option value="11">Chargeback ratio (all)</option>
+                                                <option value="5">Discover chargeback count</option>
+                                                <option value="6">Discover chargeback ratio</option>
+                                                <option value="16">Discover transaction count</option>
+                                                <option value="3">MasterCard chargeback count</option>
+                                                <option value="30">MasterCard Last Month Transactions</option>
+                                                <option value="4">MasterCard chargeback ratio</option>
+                                                <option value="15">MasterCard transaction count</option>
+                                                <option value="18">Chargeback dollar amount (all)</option>
+                                                <option value="13">Total Sales</option>
+                                                <option value="10">Transaction count (all)</option>
+                                                <option value="1">Visa chargeback count</option>
+                                                <option value="2">Visa chargeback ratio</option>
+                                                <option value="14">Visa transaction count</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control"><button type="button"
+                                                    class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                                    data-id="alertOptionsSelect" title="Select option"><span class="filter-option pull-left">Select
+                                                        option</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner" role="menu">
+                                                        <li data-original-index="0" class="selected"><a tabindex="0"
+                                                                class="" style="" data-tokens="null"><span class="text">Select
+                                                                    option</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Chargeback dollar
+                                                                    ratio (all)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">AMEX chargeback
+                                                                    count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">AMEX chargeback
+                                                                    ratio</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="4"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">AMEX transaction
+                                                                    count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="5"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Chargeback count
+                                                                    (all)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="6"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Chargeback ratio
+                                                                    (all)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="7"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Discover
+                                                                    chargeback count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="8"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Discover
+                                                                    chargeback ratio</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="9"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Discover
+                                                                    transaction count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="10"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">MasterCard
+                                                                    chargeback count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="11"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">MasterCard Last
+                                                                    Month Transactions</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="12"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">MasterCard
+                                                                    chargeback ratio</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="13"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">MasterCard
+                                                                    transaction count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="14"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Chargeback dollar
+                                                                    amount (all)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="15"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Total Sales</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="16"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Transaction count
+                                                                    (all)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="17"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Visa chargeback
+                                                                    count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="18"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Visa chargeback
+                                                                    ratio</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="19"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Visa transaction
+                                                                    count</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">
+                                                is
+                                                <span class="help-icon fa fa-question-circle"
+                                                    data-toggle="popover" data-trigger="hover" data-content="This is the way that the two fields will be compared. If you select '% or more of' you'll also need to enter the percentage for the comparison (A percentage indicator will appear for ratio comparisons.)"
+                                                    data-original-title="" title=""></span>
+                                            </label>
+
+                                            <select class="form-control selectpicker bs-select-hidden" id="operatorsSelect"
+                                                required="" name="operators">
+                                                <option value="">Select option</option>
+                                                <option value="1">Greater than (&gt;)</option>
+                                                <option value="2">Greater than or equal to (&gt;=)</option>
+                                                <option value="3">Less than (&lt;)</option>
+                                                <option value="4">Less than or equal to (&lt;=)</option>
+                                                <option value="5">Equal to (=)</option>
+                                                <option value="6">Not equal to (&lt;&gt;)</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control"><button type="button"
+                                                    class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                                    data-id="operatorsSelect" title="Select option"><span class="filter-option pull-left">Select
+                                                        option</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner" role="menu">
+                                                        <li data-original-index="0" class="selected"><a tabindex="0"
+                                                                class="" style="" data-tokens="null"><span class="text">Select
+                                                                    option</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Greater than
+                                                                    (&gt;)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Greater than or
+                                                                    equal to (&gt;=)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Less than (&lt;)</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="4"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Less than or
+                                                                    equal to (&lt;=)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="5"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Equal to (=)</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="6"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">Not equal to
+                                                                    (&lt;&gt;)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <input min="0" class="form-control selectpicker" id="alertThresholdInput"
+                                                required="" name="alert_threshold" type="number">
+
+                                            <div id="alertThresholdPct" class="input-group-addon pct" style="display: none;">%</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">
+                                                Highlight Dashboard
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="Pick a color for this notification to use for Dashboard highlighting."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <div class="picker clearfix component-color-picker"><input type="radio"
+                                                    name="display_color" id="color_picker_aTBEU_0" value=""><label for="color_picker_aTBEU_0"
+                                                    class="none" style="background-color: rgb(255, 255, 255);"></label><input
+                                                    type="radio" name="display_color" id="color_picker_aTBEU_1" value="#1c3c42"><label
+                                                    for="color_picker_aTBEU_1" style="background-color: rgb(28, 60, 66);"></label><input
+                                                    type="radio" name="display_color" id="color_picker_aTBEU_2" value="#008000"><label
+                                                    for="color_picker_aTBEU_2" style="background-color: rgb(0, 128, 0);"></label><input
+                                                    type="radio" name="display_color" id="color_picker_aTBEU_3" value="#43c3dd"><label
+                                                    for="color_picker_aTBEU_3" style="background-color: rgb(67, 195, 221);"></label><input
+                                                    type="radio" name="display_color" id="color_picker_aTBEU_4" value="#ffa500"><label
+                                                    for="color_picker_aTBEU_4" style="background-color: rgb(255, 165, 0);"></label><input
+                                                    type="radio" name="display_color" id="color_picker_aTBEU_5" value="#dc503a"><label
+                                                    for="color_picker_aTBEU_5" style="background-color: rgb(220, 80, 58);"></label></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="add_alerts_type_notification">
+                                                Send Email To (optional)
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="Enter the email address then click the plus sign. You may add more than one email recipient."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" name="alert_email_display_only"
+                                                    id="alert_email" placeholder="your@email.com" maxlength="255"
+                                                    autocomplete="off">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary" name="add">
+                                                        <span class="fa fa-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="notification-list infiniteStringDisplayDiv"><input type="hidden"
+                                                    name="alert_email[]"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">
+                                                Email notifications begin on this day of each month
+                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
+                                                    data-trigger="hover" data-content="Indicate the day of the month you want to begin this notification. Every month you will not receive notification until after this very day."
+                                                    data-original-title="" title=""></span>
+                                            </label>
+                                            <select class="form-control selectpicker bs-select-hidden" name="alert_day"
+                                                id="alertDay" required="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                            <div class="btn-group bootstrap-select form-control"><button type="button"
+                                                    class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                                    data-id="alertDay" title="1"><span class="filter-option pull-left">1</span>&nbsp;<span
+                                                        class="bs-caret"><span class="caret"></span></span></button>
+                                                <div class="dropdown-menu open">
+                                                    <ul class="dropdown-menu inner" role="menu">
+                                                        <li data-original-index="0" class="selected"><a tabindex="0"
+                                                                class="" style="" data-tokens="null"><span class="text">1</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">2</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">3</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">4</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="4"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">5</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="5"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">6</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="6"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">7</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="7"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">8</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="8"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">9</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="9"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">10</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="10"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">11</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="11"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">12</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="12"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">13</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="13"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">14</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="14"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">15</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="15"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">16</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="16"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">17</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="17"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">18</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="18"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">19</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="19"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">20</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="20"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">21</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="21"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">22</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="22"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">23</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="23"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">24</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="24"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">25</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="25"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">26</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="26"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">27</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="27"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">28</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="28"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">29</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                        <li data-original-index="29"><a tabindex="0" class="" style=""
+                                                                data-tokens="null"><span class="text">30</span><span
+                                                                    class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card error alertErrMsg" style="display: none;">
+                                            <div class="title">Please correct the following issues</div>
+                                            <div class="content error_msgs">
+                                                <ul>
+                                                    <li>Choose either highlight dashboard or to send notification via
+                                                        email.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="_token" value="9z8R60RQs24QslUernhomMiDsq3ek81bksNFqQ0z">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" name="submit" class="btn btn-primary btn-lg">Save
+                                        Notification</button>
+                                    <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <!-- /content area -->
+
             </div>
+            <!-- /main content -->
 
         </div>
-        <!-- /content area -->
+        <!-- /page content -->
 
     </div>
-    <!-- /main content -->
-
-</div>
-<!-- /page content -->
-
-</div>
-<!-- /page container -->
+    <!-- /page container -->
 
 
 
 
 
-<!-- Core JS files -->
-<script src="global_assets/js/plugins/loaders/pace.min.js"></script>
-<script src="global_assets/js/core/libraries/jquery.min.js"></script>
-<script src="global_assets/js/core/libraries/bootstrap.min.js"></script>
-<script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
-<script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
-<script src="global_assets/js/plugins/forms/styling/uniform.min.js"></script>
-<script src="global_assets/js/plugins/forms/styling/switchery.min.js"></script>
-<script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
-<script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
-<script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
-<script src="assets/js/tables/jquery.datatable.min.js"></script>
-<!-- /core JS files -->
+    <!-- Core JS files -->
+    <script src="global_assets/js/plugins/loaders/pace.min.js"></script>
+    <script src="global_assets/js/core/libraries/jquery.min.js"></script>
+    <script src="global_assets/js/core/libraries/bootstrap.min.js"></script>
+    <script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script src="assets/js/tables/jquery.datatable.min.js"></script>
+    <!-- /core JS files -->
 
-<!-- Theme JS files -->
-<script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
-<script src="global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
-<script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
-<script type="text/javascript" src="assets/js/highcharts.js"></script>
+    <!-- Theme JS files -->
+    <script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script type="text/javascript" src="assets/js/highcharts.js"></script>
 
-<script src="assets/data/cid_15/dashboard.js"></script>
-<script type="text/javascript" src="assets/js/charts/linechart.js"></script>
+    <script src="assets/data/cid_15/dashboard.js"></script>
+    <script type="text/javascript" src="assets/js/charts/linechart.js"></script>
 
-<script type="text/javascript">
-
-    lineChart("chargeback_ratio", chargeback_ratio_json);
-    lineChart("chargeback_count", chargeback_count_json);
-
-</script>
+    <script type="text/javascript">
+        lineChart("chargeback_ratio", chargeback_ratio_json);
+        lineChart("chargeback_count", chargeback_count_json);
+    </script>
 
 
 
-<script src="assets/js/dashboard.js"></script>
-<script src="assets/js/app.js"></script>
-<!-- /theme JS files -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- /theme JS files -->
 
 </body>
+
 </html>

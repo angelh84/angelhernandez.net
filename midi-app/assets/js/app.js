@@ -213,8 +213,7 @@ $('.panel').on('click', '.close-pop', function (e) {
           $('body').removeClass('sidebar-xs').addClass('sidebar-fixed-expanded');
         }
       }).on('mouseleave', function() {
-        if ($('body').hasClass('sidebar-fixed-expanded')) {
-
+        if ($('body').hasClass('sidebar-fixed-expanded') && !$('body').hasClass('notifications')) {
           // Collapse fixed navbar
           $('body').removeClass('sidebar-fixed-expanded').addClass('sidebar-xs');
         }
@@ -436,6 +435,85 @@ $('.panel').on('click', '.close-pop', function (e) {
     container: 'body'
   });
 
+
+  // ========================================
+  //
+  // NOTIFICATIONS NAV
+  //
+  // ========================================
+  
+  var createNotificationBG = function () {
+    $('body').addClass('notifications').append('<div class="bg-overlay"></div>');
+    setTimeout(function () {
+      $('.bg-overlay').addClass('show');  
+    }, 10)
+  }
+
+  var deleteNotificationBG = function () {
+    var $bg = $('.bg-overlay');
+    $bg.removeClass('show')
+    $('body').removeClass('notifications')
+    setTimeout(function () {
+      $bg.remove();
+    }, 250)
+  }
+
+  var toggleNotificationDrawer = function () {
+    $('.notifications-pop').toggleClass('show');
+  }
+
+  var openNav = function () {
+    $('body').attr('class', 'navbar-top pace-done notifications sidebar-fixed-expanded');
+  }
+
+  var closeNav = function () {
+    $('body').attr('class', 'navbar-top pace-done sidebar-xs');
+    setTimeout(function () {
+      removeNavActive();
+    }, 300)
+  }
+
+  var removeNavActive = function () {
+    $('.navigation').find('.active').removeClass('active');
+  }
+
+  $('.notifications').on('click', function (e) {
+    e.preventDefault();
+
+     // Make notifications nav link active
+     $(this)
+      .parents('li')
+      .addClass('active')
+      .siblings('li')
+      .removeClass('active')
+
+    // if notification closed
+    if (!$('body').hasClass('notifications')) {
+      createNotificationBG();
+      toggleNotificationDrawer();
+      openNav();
+
+    } else {
+    // if notification is open
+      deleteNotificationBG();
+      toggleNotificationDrawer();
+      removeNavActive();
+    }
+  });
+
+  // close notification drawere
+  $('body').on('click', '.bg-overlay', function () {
+    if ($('body').hasClass('notifications')) {
+      deleteNotificationBG();
+      toggleNotificationDrawer();
+      closeNav();
+    }
+  });
+
+  $('.add-notification-button').on('click', function (e) {
+    e.preventDefault();
+    $('#add_notification_modal').modal('show');
+  })
 
   // Collapsible functionality
   // -------------------------
