@@ -515,6 +515,15 @@ $('.panel').on('click', '.close-pop', function (e) {
     $('#add_notification_modal').modal('show');
   })
 
+  $('.notification-check').find('input').on('change', function () {
+    var $inputWrap = $(this).parents('.checkbox').siblings('.notification-input-wrap');
+    if ($(this).is(':checked')) {
+      $inputWrap.slideDown(250);
+    } else {
+      $inputWrap.slideUp(250);
+    }
+  })
+
   // Collapsible functionality
   // -------------------------
 

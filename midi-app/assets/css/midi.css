@@ -541,6 +541,128 @@ button.multiselect {
 	border-bottom: 1px solid #CECDCC;
 }
 
+.notification-input-wrap {
+	display: none;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.notification-input-wrap input {
+	border: 1px solid #CECDCC;
+	height: 40px;
+	vertical-align: middle;
+	padding-left: 15px;
+	font-size: 14px;
+	border-radius: 0;
+}
+
+.notification-input-wrap button {
+	background-color: #aed25c;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	color: #fff;
+	vertical-align: middle;
+	margin-left: -4px;
+	border: 0;
+	border-radius: 0;
+}
+
+.notification-holder {
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #CECDCC;
+}
+
+.notification-input-wrap button:hover {
+	background-color: #b8e454;
+}
+
+.notification-switch i {
+	font-size: 22px;
+}
+
+.notification-edit i {
+	color: #ffb500;
+}
+
+.notification-name {
+	display: inline-block;
+	vertical-align: middle;
+	color: #848486;
+}
+
+#add_notification_modal .help-icon {
+	padding-left: 6px;
+    color: #a3a3a3;
+    font-size: 11px;
+    line-height: 19px;
+    padding-right: 6px;
+    height: 22px;
+}
+
+#add_notification_modal label {
+	font-size: 14px;
+    font-weight: 400;
+}
+
+#add_notification_modal .dropdown-toggle {
+	border-radius: 0;
+}
+
+#add_notification_modal #alert_email {
+	border-radius: 0;
+}
+
+.component-color-picker input {
+	display: none; }
+  
+.component-color-picker label {
+	height: 40px;
+	width: 60px;
+	border: 1px solid #3c3c3c;
+	display: block;
+	float: left;
+	margin-left: -1px;
+}
+  
+.component-color-picker input[type=radio]:checked + label {
+	text-align: center;
+}
+
+.component-color-picker input[type=radio]:checked + label:before {
+	color: #fff;
+	display: block;
+	content: "\f00c";
+	font-family: fontawesome;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 16px;
+	line-height: 1;
+}
+
+.component-color-picker input[type=radio]:checked + label.none:before {
+	content: "\f05e";
+	font-family: fontawesome;
+	color: #ef311e;
+	text-shadow: none;
+}
+
+label[for=color_picker_aTBEU_0] {
+	text-align: center;
+}
+
+label[for=color_picker_aTBEU_0] i {
+	color: red;
+	line-height: 40px;
+}
+
+
 @media(min-width: 769px) {
 	.navbar {
 		height: 63px;

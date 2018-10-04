@@ -491,7 +491,12 @@
                         <div class="notifications-wrap">
                             <button class="add-notification-button">Add Notification</button>
                             <h2>CURRECT NOTIFICATIONS</h2>
-                            <div class="notification-holder"></div>
+                            <div class="notification-holder chargeback">
+                                <button type="button" class="notification-switch"><i class="fas fa-toggle-on"></i></button>
+                                <button type="button" class="notification-trash"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="notification-edit"><i class="fas fa-edit"></i></button>
+                                <div class="notification-name">Kevin</div>
+                            </div>
                             <div class="notification-check">
                                 <div class="checkbox">
                                     <label>
@@ -499,13 +504,35 @@
                                         Send Daily Chargeback Report
                                     </label>
                                 </div>
+                                <div class="notification-input-wrap">
+                                    <label for="chargeback-eamil-notification">Recipient Email Address</label>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" name="add">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="notification-check">
+                            <div class="notification-check prevention">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" class="styled">
                                         Send Daily Prevention Report
                                     </label>
+                                </div>
+                                <div class="notification-input-wrap">
+                                    <label for="prevention-email-notification">Recipient Email Address</label>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" name="add">
+                                                <span class="fa fa-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -814,7 +841,7 @@
                                             </label>
                                             <div class="picker clearfix component-color-picker"><input type="radio"
                                                     name="display_color" id="color_picker_aTBEU_0" value=""><label for="color_picker_aTBEU_0"
-                                                    class="none" style="background-color: rgb(255, 255, 255);"></label><input
+                                                    class="none" style="background-color: rgb(255, 255, 255);"><i class="fas fa-ban"></i></label><input
                                                     type="radio" name="display_color" id="color_picker_aTBEU_1" value="#1c3c42"><label
                                                     for="color_picker_aTBEU_1" style="background-color: rgb(28, 60, 66);"></label><input
                                                     type="radio" name="display_color" id="color_picker_aTBEU_2" value="#008000"><label
