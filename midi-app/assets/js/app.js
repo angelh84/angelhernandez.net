@@ -501,6 +501,8 @@ $('.panel').on('click', '.close-pop', function (e) {
     }
   });
 
+  
+
   // close notification drawere
   $('body').on('click', '.bg-overlay', function () {
     if ($('body').hasClass('notifications')) {

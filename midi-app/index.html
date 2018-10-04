@@ -605,9 +605,10 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h2 class="modal-title">HELP</h2>
+                                        <button type="button" class="notification-headline-question" data-popup="tooltip" title="The notifications section allows you to take action when a MID is in trouble. You can set up an email to notify you when certain parameters are met. For example, you may want to be emailed when the CB count for MID 12345 exceeds 50 chargebacks during the current month. You may also want to be emailed when the CB ratio exceeds 2% for all MIDs during the last 30 days. You can set up as many notifications as you like in order to stay on top of your business." data-placement="left">
+                                            <i class="fas fa-question-circle help-icon"></i>
+                                        </button>
+                                    <h2 class="modal-title">ADD NOTIFICATION</h2>
                                 </div>
                                 <div class="modal-body">
                                     <form id="form_alert">
@@ -616,9 +617,9 @@
                                         <div class="form-group">
                                             <label for="alert_name">
                                                 Name
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="This is a descriptive name to help you identify your notification."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="This is a descriptive name to help you identify your notification." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <input type="text" class="form-control" name="alert_name" id="alert_name"
                                                 autocomplete="off" required="">
@@ -627,9 +628,9 @@
                                         <div class="form-group">
                                             <label for="midSelectAlert">
                                                 MID
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="This allows you to filter the formula to only apply to a specific MID, or to apply to all MIDs as necessary."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-name-question" data-popup="tooltip" title="This allows you to filter the formula to only apply to a specific MID, or to apply to all MIDs as necessary." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <select class="form-control selectpicker midSelect bs-select-hidden"
                                                 data-use-id-as-value="true" data-size="25" id="midSelectAlert" required=""
@@ -679,9 +680,9 @@
                                         <div class="form-group">
                                             <label for="">
                                                 If
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="This is the first data point to use in the comparison."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="This is the first data point to use in the comparison." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <select class="form-control selectpicker bs-select-hidden" id="alertOptionsSelect"
                                                 required="" name="alert_options_select">
@@ -780,9 +781,9 @@
                                         <div class="form-group">
                                             <label for="">
                                                 is
-                                                <span class="help-icon fa fa-question-circle"
-                                                    data-toggle="popover" data-trigger="hover" data-content="This is the way that the two fields will be compared. If you select '% or more of' you'll also need to enter the percentage for the comparison (A percentage indicator will appear for ratio comparisons.)"
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="This is the way that the two fields will be compared. If you select '% or more of' you'll also need to enter the percentage for the comparison (A percentage indicator will appear for ratio comparisons.)" data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
 
                                             <select class="form-control selectpicker bs-select-hidden" id="operatorsSelect"
@@ -835,13 +836,13 @@
                                         <div class="form-group">
                                             <label for="">
                                                 Highlight Dashboard
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="Pick a color for this notification to use for Dashboard highlighting."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="Pick a color for this notification to use for Dashboard highlighting." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <div class="picker clearfix component-color-picker"><input type="radio"
                                                     name="display_color" id="color_picker_aTBEU_0" value=""><label for="color_picker_aTBEU_0"
-                                                    class="none" style="background-color: rgb(255, 255, 255);"><i class="fas fa-ban"></i></label><input
+                                                    class="none" style="background-color: rgb(255, 255, 255);"></label><input
                                                     type="radio" name="display_color" id="color_picker_aTBEU_1" value="#1c3c42"><label
                                                     for="color_picker_aTBEU_1" style="background-color: rgb(28, 60, 66);"></label><input
                                                     type="radio" name="display_color" id="color_picker_aTBEU_2" value="#008000"><label
@@ -857,9 +858,9 @@
                                         <div class="form-group">
                                             <label for="add_alerts_type_notification">
                                                 Send Email To (optional)
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="Enter the email address then click the plus sign. You may add more than one email recipient."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="Enter the email address then click the plus sign. You may add more than one email recipient." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <div class="input-group">
                                                 <input type="email" class="form-control" name="alert_email_display_only"
@@ -881,9 +882,9 @@
                                         <div class="form-group">
                                             <label for="">
                                                 Email notifications begin on this day of each month
-                                                <span class="help-icon fa fa-question-circle" data-toggle="popover"
-                                                    data-trigger="hover" data-content="Indicate the day of the month you want to begin this notification. Every month you will not receive notification until after this very day."
-                                                    data-original-title="" title=""></span>
+                                                <button type="button" class="notification-question" data-popup="tooltip" title="Indicate the day of the month you want to begin this notification. Every month you will not receive notification until after this very day." data-placement="right">
+                                                    <i class="fas fa-question-circle help-icon"></i>
+                                                </button>
                                             </label>
                                             <select class="form-control selectpicker bs-select-hidden" name="alert_day"
                                                 id="alertDay" required="">
@@ -1028,13 +1029,10 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="_token" value="9z8R60RQs24QslUernhomMiDsq3ek81bksNFqQ0z">
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" name="submit" class="btn btn-primary btn-lg">Save
-                                        Notification</button>
-                                    <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+                                    <button type="reset" class="btn btn-secondary btn-lg btn-reset">Reset</button><button type="button" name="submit" class="btn btn-primary btn-lg btn-save" data-dismiss="modal" aria-label="Close">Save Notification</button>
                                 </div>
                             </div>
                         </div>
