@@ -77,12 +77,17 @@ body.breakdown-open {
 .chargeback-panel .panel-heading,
 .ratio-panel .panel-heading {
     border-bottom: 1px solid #cecdcc;
-    padding-right: 15px;
+    padding-right: 0;
     padding-bottom: 5px;
-    padding-left: 15px;
-    margin-right: 15px;
+    padding-left: 0;
+    margin-right: 20px;
     margin-bottom: 10px;
-    margin-left: 15px;
+    margin-left: 20px;
+}
+
+.chargeback-panel .heading-elements,
+.ratio-panel .heading-elements {
+    right: -10px;
 }
 
 .chargeback-panel,

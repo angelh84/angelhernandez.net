@@ -17,3 +17,6 @@
     height: 275px;
 }
 
+.first-row-charts-dashboard .panel {
+    min-height: 375px;
+}

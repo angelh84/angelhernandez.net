@@ -712,6 +712,15 @@ label[for=color_picker_aTBEU_0] i {
 	float: right;
 }
 
+.page-title h1 span {
+	font-weight: normal;
+}
+
+.page-subtitle {
+	padding-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
 
 @media(min-width: 769px) {
 	.navbar {
