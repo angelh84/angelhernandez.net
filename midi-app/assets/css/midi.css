@@ -722,6 +722,18 @@ label[for=color_picker_aTBEU_0] i {
     letter-spacing: 1px;
 }
 
+.temp-chart-container {
+	min-height: 307px;
+    background-color: #f1f1f1;
+    display: table;
+    width: 100%;
+}
+
+.temp-chart-container strong {
+	display: table-cell;
+	vertical-align: middle;
+}
+
 @media(min-width: 769px) {
 	.navbar {
 		height: 63px;

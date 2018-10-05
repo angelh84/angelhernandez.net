@@ -17,6 +17,7 @@
     <link href="assets/css/daterange.css" rel="stylesheet" type="text/css">
     <link href="assets/css/midi.css" rel="stylesheet" type="text/css">
     <link href="assets/css/charts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/breakdown.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 </head>
 
@@ -226,33 +227,145 @@
                     </div>
                      <div class="row first-row-charts-dashboard">
                         <div class="col-lg-6">
-                            <!-- chargeback count -->
+                            <!-- marketing sourcd -->
                             <div class="panel panel-flat">
                                 <div class="panel-heading">
-                                    <h6 class="panel-title">VARIABLE ANALYTICS - MARKETING SOURCE</h6>
+                                    <h6 id="prevention_analytics_title" class="panel-title">PREVENTION ANALYTICS - MARKETING SOURCE</h6>
                                     <div class="heading-elements">
-                                        <button class="panel-question" data-message="This is a look at the number of chargebacks by credit card in your selected date range. You can choose to view chargebacks for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i
-                                                class="fas fa-question-circle"></i></button>
+                                        <div class="panel-drop">
+                                            <select class="select" id="prevention_analytics_select">
+                                                <option value="Marketing Source">Marketing Source</option>
+                                                <option value="Rebill Cycle">Rebill Cycle</option>
+                                                <option value="Price Point">Price Point</option>
+                                                <option value="Country">Country</option>
+                                                <option value="Product">Product</option>
+                                                <option value="BIN Number">Bin Number</option>
+                                            </select>
+                                        </div>
+                                        <button class="panel-question"
+                                                data-message="This is a look at your transaction and alerts data side by side across various metrics. Use this as a preview tool of what may be expected on the chargeback side of your business as higher alert counts could mean a higher number of chargebacks.">
+                                            <i class="fas fa-question-circle"></i></button>
                                     </div>
                                 </div>
-
+    
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div class="graph-and-legend" style="margin-top: 10px;">
+                                            <div class="graph-and-legend">
                                                 <div class="container">
-                                                    <div id="chargeback_count"></div>
+                                                    <div id="preventionAnalytics" class='graph-display'
+                                                            data-graph-active-partners='["verifi","ethoca"]'></div>
                                                 </div>
                                             </div>
-                                            <div class="containerLoading" style="display: block;"></div>
+                                            <div class="graph-overlay data-point-overlay"
+                                                    id="bin_number_legends_overlay_preventionAnalytics"
+                                                    data-series="bin-number">
+                                                <div class="stats">
+                                                    <div class="legend-stats">
+                                                        <div class="legend-col">
+                                                            <div>
+                                                                <div class="caption">BIN Number</div>
+                                                                <div class="amounts">
+                                                                    <span id="param_1" class="bin-number"></span>
+                                                                    <span id="param_1_hidden" class="bin-number-hidden"
+                                                                            style="display:none;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bank-col">
+                                                            <div>
+                                                                <div class="caption">Bank Name</div>
+                                                                <div class="amounts">
+                                                                    <span id="param_2"
+                                                                            class="bin-number-bank"></span>
+                                                                    <span id="param_2_hidden" class="bin-number-bank-hidden"
+                                                                            style="display:none;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chargeback_count-col">
+                                                            <div>
+                                                                <div class="caption">Alerts</div>
+                                                                <div class="amounts">
+                                                                    <span id="param_3"
+                                                                            class="amount bin-number-chargeback-count"></span>
+                                                                    <span id="param_3_hidden"
+                                                                            class="amount bin-number-chargeback-count-hidden"
+                                                                            style="display:none;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ratio-col">
+                                                            <div>
+                                                                <div class="caption">Percentage of Total</div>
+                                                                <div class="amounts">
+                                                                    <span id="param_4"
+                                                                            class="amount bin-number-percentage"></span>
+                                                                    <span>%</span>
+                                                                    <span id="param_4_hidden"
+                                                                            class="amount bin-number-percentage-hidden"
+                                                                            style="display:none;"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="graph-overlay data-point-overlay"
+                                                    id="price_point_legends_overlay_preventionAnalytics"
+                                                    data-series="price-point">
+                                                <div class="stats">
+                                                    <div class="legend-stats">
+                                                        <div class="price-point-col">
+                                                            <div>
+                                                                <div class="caption">Price Point</div>
+                                                                <div class="width-26-pct amounts">
+                                                                    <span id="param_1"
+                                                                            class="amount price-point-amount">$0</span>
+                                                                    <span id="param_1_hidden"
+                                                                            class="amount price-point-amount-hidden"
+                                                                            style="display:none;">$0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chargeback-count-col">
+                                                            <div>
+                                                                <div class="caption">Alert Count</div>
+                                                                <div class="width-26-pct amounts">
+                                                                    <span id="param_2"
+                                                                            class="amount price-point-count">0</span>
+                                                                    <span id="param_2_hidden"
+                                                                            class="amount price-point-count-hidden"
+                                                                            style="display:none;">0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="total-percentage-col">
+                                                            <div>
+                                                                <div class="caption">Percentage of Total</div>
+                                                                <div class="width-26-pct amounts">
+                                                                    <span id="param_3"
+                                                                            class="amount price-point-percentage">0</span>
+                                                                    <span>%</span>
+                                                                    <span id="param_3_hidden"
+                                                                            class="amount price-point-percentage-hidden"
+                                                                            style="display:none;">0%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /chargeback count -->
+                            <!-- /marketing source -->
                         </div>
 
                         <div class="col-lg-6">
+
+                            <!-- historical performance -->
                             <div class="panel panel-flat performance-panel">
                                 <div class="panel-heading">
                                     <h6 class="panel-title">HISTORICAL PERFORMANCE<h6>
@@ -272,12 +385,14 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="chart-container text-center">
-                                                <p><strong>[ LINE CHART ]</strong></p>
+                                                <p class="temp-chart-container"><strong>[ LINE CHART ]</strong></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- /historical performance -->
+
                         </div>
                     </div>
                     <!-- /main charts -->
@@ -344,15 +459,15 @@
                     </div>
                     <!-- /forecast -->
 
-                    <!-- chargeback data -->
+                    <!-- totals -->
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-flat">
                                 <div class="panel-heading">
-                                    <h6 class="panel-title">MERCHANT ACCOUNT CHARGEBACK DATA</h6>
+                                    <h6 class="panel-title"><i class="far fa-calendar-alt"></i> TOTALS FOR MID 4341957</h6>
                                     <div class="heading-elements">
-                                        <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
-                                            data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                        <!-- <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                            data-placement="top"><i class="icon-floppy-disk"></i></button> -->
                                         <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i
                                                 class="fas fa-question-circle"></i></button>
                                     </div>
@@ -365,169 +480,50 @@
                                             <table id="chargebacks_table" class="display table table-xlg text-nowrap">
                                                 <thead>
                                                     <tr>
-                                                        <th>Actions</th>
-                                                        <th>MID</th>
-                                                        <th>Alias</th>
-                                                        <th>Gateways</th>
+                                                        <th>Date</th>
+                                                        <th>Visa #</th>
+                                                        <th>Visa TX</th>
+                                                        <th>Visa Ratio</th>
                                                         <th>Visa Ratio</th>
                                                         <th>MC #</th>
-                                                        <th>Visa #</th>
+                                                        <th>VC TX</th>
                                                         <th>MC Ratio</th>
+                                                        <th>Disc #</th>
+                                                        <th>Disc TX</th>
+                                                        <th>Disc Ratio</th>
+                                                        <th>Amex #</th>
+                                                        <th>Amex TX</th>
+                                                        <th>Amex Ratio</th>
+                                                        <th>Total CBs</th>
                                                         <th>Transactions</th>
                                                         <th>Total Sales</th>
                                                         <th>Total CB $</th>
-                                                        <th>CB #</th>
                                                         <th>CB Ratio</th>
                                                         <th>$ Ratio</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">534703590400610</a></td>
-                                                        <td>OEM-SS-PD-100</td>
-                                                        <td>913 | 917 | 919 | 920 | 921</td>
-                                                        <td>100%</td>
-                                                        <td>16</td>
-                                                        <td>28</td>
-                                                        <td>3.03%</td>
-                                                        <td>5</td>
-                                                        <td>600.64</td>
-                                                        <td>2,117.69</td>
-                                                        <td>54</td>
-                                                        <td>1080%</td>
-                                                        <td>352.57%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">9287432</a></td>
-                                                        <td>OEM Vantiv</td>
-                                                        <td>922</td>
-                                                        <td>2.31%</td>
-                                                        <td>36</td>
-                                                        <td>26</td>
-                                                        <td>6.46%</td>
-                                                        <td>1844</td>
-                                                        <td>74,840.33</td>
-                                                        <td>3,262.81</td>
-                                                        <td>83</td>
-                                                        <td>4.5%</td>
-                                                        <td>4.37%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">154948</a></td>
-                                                        <td>WNI-Saffron-PAC-IRE-$100-N (USD)</td>
-                                                        <td>545 | 547 | 549</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0.00</td>
-                                                        <td>0.00</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">287292</a></td>
-                                                        <td>WNI*Nutra/Ketone-PAC-IRE-£100-N (GBP)</td>
-                                                        <td>559 | 561 | 563</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0.00</td>
-                                                        <td>0.00</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">312116</a></td>
-                                                        <td>WNI*Nutra-PAC-IRE-£100-N (GBP)</td>
-                                                        <td>553 | 555 | 557</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0.00</td>
-                                                        <td>0.00</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">431957</a></td>
-                                                        <td>BC-T-BuyHealth/-PAC-IRE-$100-N (USD)</td>
-                                                        <td>541</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0.00</td>
-                                                        <td>0.00</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
-                                                                    data-popup="popover" data-trigger="focus" data-html="true"
-                                                                    data-content="<ul><li><a href='#'>Hide Mid</a></li><li><a href='#'>View Details</a></li></ul>"><i
-                                                                        class="fas fa-bars"></i></button></div>
-                                                        </td>
-                                                        <td><a href="#">MEO Stripe</a></td>
-                                                        <td>MEO Stripe</td>
-                                                        <td>924</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0</td>
-                                                        <td>0.00</td>
-                                                        <td>0.00</td>
-                                                        <td>0</td>
-                                                        <td>0%</td>
-                                                        <td>0%</td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -537,7 +533,83 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /chargeback data -->
+                    <!-- /totals -->
+
+                    <!-- daily -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><i class="far fa-calendar-alt"></i> DAILY BREAKDOWN</h6>
+                                    <div class="heading-elements">
+                                        <!-- <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                            data-placement="top"><i class="icon-floppy-disk"></i></button> -->
+                                        <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i
+                                                class="fas fa-question-circle"></i></button>
+                                    </div>
+                                </div>
+
+
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="chargebacks_table" class="display table table-xlg text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Visa #</th>
+                                                        <th>Visa TX</th>
+                                                        <th>Visa Ratio</th>
+                                                        <th>Visa Ratio</th>
+                                                        <th>MC #</th>
+                                                        <th>VC TX</th>
+                                                        <th>MC Ratio</th>
+                                                        <th>Disc #</th>
+                                                        <th>Disc TX</th>
+                                                        <th>Disc Ratio</th>
+                                                        <th>Amex #</th>
+                                                        <th>Amex TX</th>
+                                                        <th>Amex Ratio</th>
+                                                        <th>Total CBs</th>
+                                                        <th>Transactions</th>
+                                                        <th>Total Sales</th>
+                                                        <th>Total CB $</th>
+                                                        <th>CB Ratio</th>
+                                                        <th>$ Ratio</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /daily -->
 
                     <!-- Footer -->
                     <div class="footer text-muted">
@@ -704,9 +776,11 @@
         lineChart("chargeback_count", chargeback_count_json);
     </script>
 
-
+    <script src="assets/data/cid_15/prevention.js"></script>
+    <script type="text/javascript" src="assets/js/charts/pie.js"></script>
+    <script type="text/javascript" src="assets/js/charts/bar.js"></script>
     <script src="assets/js/notifications.js"></script>
-    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/page/breakdown.js"></script>
     <script src="assets/js/app.js"></script>
     <!-- /theme JS files -->
 
