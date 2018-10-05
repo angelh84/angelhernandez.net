@@ -224,6 +224,62 @@
 
                         </div>
                     </div>
+                     <div class="row first-row-charts-dashboard">
+                        <div class="col-lg-6">
+                            <!-- chargeback count -->
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">VARIABLE ANALYTICS - MARKETING SOURCE</h6>
+                                    <div class="heading-elements">
+                                        <button class="panel-question" data-message="This is a look at the number of chargebacks by credit card in your selected date range. You can choose to view chargebacks for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i
+                                                class="fas fa-question-circle"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="graph-and-legend" style="margin-top: 10px;">
+                                                <div class="container">
+                                                    <div id="chargeback_count"></div>
+                                                </div>
+                                            </div>
+                                            <div class="containerLoading" style="display: block;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /chargeback count -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="panel panel-flat performance-panel">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">HISTORICAL PERFORMANCE<h6>
+                                    <div class="heading-elements performance-heading">
+                                        <select class="multiselect" multiple="multiple">
+                                            <option value="total" selected="selected">Total</option>
+                                            <option value="visa" selected="selected">Visa</option>
+                                            <option value="mastercard" selected="selected">MasterCard</option>
+                                            <option value="discover" selected="selected">Discover</option>
+                                            <option value="amex" selected="selected">American Express</option>
+                                        </select>
+                                        <button class="panel-question" data-message="This is a look at your performance over the past year. Use this graph to see peaks, trends and improvements in your chargeback history over time. You can choose to view chargeback history for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i class="fas fa-question-circle"></i></button>
+                                    </div>
+                                </div>
+        
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="chart-container text-center">
+                                                <p><strong>[ LINE CHART ]</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /main charts -->
 
 
