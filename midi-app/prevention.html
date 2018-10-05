@@ -494,6 +494,59 @@
                     </div>
                 </div>
 
+                <!-- notifications pop -->
+                <div class="notifications-pop">
+                    <div class="notifications-wrap">
+                        <button class="add-notification-button">Add Notification</button>
+                        <h2>CURRECT NOTIFICATIONS</h2>
+                        <div class="notification-holder chargeback">
+                            <button type="button" class="notification-switch"><i class="fas fa-toggle-on"></i></button>
+                            <button type="button" class="notification-trash"><i class="fas fa-trash-alt"></i></button>
+                            <button type="button" class="notification-edit"><i class="fas fa-edit"></i></button>
+                            <div class="notification-name">Kevin</div>
+                        </div>
+                        <div class="notification-check">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="styled">
+                                    Send Daily Chargeback Report
+                                </label>
+                            </div>
+                            <div class="notification-input-wrap">
+                                <label for="chargeback-eamil-notification">Recipient Email Address</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" name="add">
+                                            <span class="fa fa-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification-check prevention">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="styled">
+                                    Send Daily Prevention Report
+                                </label>
+                            </div>
+                            <div class="notification-input-wrap">
+                                <label for="prevention-email-notification">Recipient Email Address</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" name="add">
+                                            <span class="fa fa-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /notifications pop -->
+
             </div>
             <!-- /content area -->
 
@@ -534,6 +587,7 @@
 <script type="text/javascript" src="assets/js/charts/bar.js"></script>
 <script type="text/javascript" src="assets/js/charts/doublePie.js"></script>
 
+<script src="assets/js/notifications.js"></script>
 <script type="text/javascript" src="assets/js/page/prevention.js"></script>
 <script src="assets/js/app.js"></script>
 <!-- /theme JS files -->
