@@ -5,3 +5,7 @@
 .multiselect {
     border: 0;
 }
+
+#totals_table_wrapper .search {
+    display: none;
+}

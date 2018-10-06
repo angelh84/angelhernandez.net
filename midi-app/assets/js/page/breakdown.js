@@ -3,31 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   barChart("preventionAnalytics", prevention_analytics_marketing_source_json);
   toggleOverlay("Marketing Source");
   
-  function insertTableRecords(records, fields, tableElm) {
-    tableElm.clear();
-    let replaceNullOrEmptyString = function(inputString) {
-      let replacementString = '--';
-      if (inputString === '' || inputString === null) {
-        return replacementString;
-      }
-      return inputString;
-    };
-    for (let x = 0; x < records.length; x++) {
-      let row = [];
-      // add action column to row if needed
-      // row = buildActionButtonAndAttachToRow(row, result[x], options.actionColumn);
-      for (let y = 0; y < fields.length; y++) {
-        records[x][fields[y]] = replaceNullOrEmptyString(records[x][fields[y]]);
-        row.push(records[x][fields[y]]);
-      }
-      // add row to DataTable's rows
-      tableElm.row.add(row);
-    }
-    // fire update of DataTable
-    tableElm.draw(true);
-  }
-  
-  
   $("#prevention_analytics_select").on("change", function(elm) {
     switch ($(this).val()) {
       case "Marketing Source":
@@ -85,6 +60,93 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
+        // ========================================
+    //
+    // Datatable: Initialize
+    //
+    // ========================================
+
+    var $totalsTable = $('#totals_table');
+    var $breakdownTable = $('#breakdown_table');
+
+    var tableInit = function ($table) {
+        var table = $table.DataTable({
+            "language": {
+                "lengthMenu":     "Display _MENU_ records",
+                "search":         "",
+                "paginate": {
+                    "first":      "First",
+                    "last":       "Last",
+                    "next":       "First",
+                    "previous":   "Last"
+                }
+            },
+            "dom": '<"btn-group pull-right fit-width table-top-right"<"search"f><"show-hide"><"icons">>r<"table-wrap"t><"bottom"ilp><"clear">'
+        });
+
+
+        // ========================================
+        //
+        // Datatable: Show/Hide Drop
+        //
+        // ========================================
+
+    
+        // Handle show-hide drop
+        var $parent = $table.parents('.dataTables_wrapper');
+
+        $parent
+            .find('.show-hide')
+            .html('<button type="button" class="show-hide-button">Show / Hide Columns <i class="icon-arrow-down22"></i></button>')
+            .append(createShowHideDrop($parent));
+
+        $parent.find('.show-hide-button').on('click', function () {
+            $parent.find('.show-hide-drop').toggleClass('showing');
+        });
+
+        // Toggle column visibility
+        $parent.find('.show-hide-check').on('input', function () {
+            var column = table.column($(this).attr('data-index'));
+            column.visible(!column.visible());
+        })
+
+        // Close drop on body click
+        $('body').on('click', function (e) {
+            if(!$(e.target).parents('.show-hide').length){
+                $parent.find('.show-hide-drop').removeClass('showing');
+            }
+        });
+    };
+
+    // INIT ALL TABLES
+    tableInit($totalsTable);
+    tableInit($breakdownTable);
+    
+
+    // Build Show / Hide dropdown
+    function createShowHideDrop ($target) {
+        var i = 0;
+        var $dropUl = $('<ul/>').addClass('dropdown-menu show-hide-drop');
+        var tableHeaders = getTableHeaders($target);
+
+        for (i; i < tableHeaders.length; i++) {
+            var $dropLi = $('<li/>').addClass('checkbox');
+            var $dropLabel = $('<label/>');
+            $('<input>', {
+                'class': 'styled show-hide-check',
+                'type': 'checkbox',
+                'data-index': i,
+                'checked': 'checked'
+            }).appendTo($dropLabel);
+
+            $dropLabel.append(tableHeaders[i])
+            $dropLi.html($dropLabel);
+            $dropUl.append($dropLi);
+        }
+        return $dropUl;
+    }
+
+
     // ========================================
     //
     // Datatable: Search Drop
@@ -92,13 +154,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     var searchDrop = function ($target) {
-      return '<div class="table-search-drop">' +
-        '<select class="select table-search-select">' +
-            searchDropOptions($target).html() +
-        '</select>' +
-      '</div>';
-    } 
-
+        return '<div class="table-search-drop">' +
+          '<select class="select table-search-select">' +
+              searchDropOptions($target).html() +
+          '</select>' +
+        '</div>';
+      } 
+  
     function searchDropOptions ($target) {
         var i = 0;
         var $dropUl = $('<ul/>');
@@ -112,10 +174,28 @@ document.addEventListener('DOMContentLoaded', function() {
         return $dropUl;
     }
 
-    $('#verifi_table_wrapper').find('.search').prepend(searchDrop($('#verifi_table')));
-    $('#ethoca_table_wrapper').find('.search').prepend(searchDrop($('#ethoca_table')));
 
+    $breakdownTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($breakdownTable));
 
+    
+    // ========================================
+    //
+    // Daterange drop
+    //
+    // ========================================
+
+    $('.tab').on('click', function () {
+        var $daterangeDrop = $('.daterange-drop').siblings('.select2-container');
+        if ($(this).hasClass('showDateDrop')) {
+            $daterangeDrop.addClass('showDateDrop');
+        } else {
+            $daterangeDrop.removeClass('showDateDrop');
+        }
+    })
+  
     // ========================================
     //
     // Misc.
@@ -131,15 +211,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         return tableHeaders;
     }
-
-    // Styled checkboxes/radios
-    $('.styled').uniform();
     
     $('.multiselect').multiselect({
       buttonText: function () {
           return 'Options'
       }
     });
-  
+
+    // Styled checkboxes/radios
+    $('.styled').uniform();
   
   });
