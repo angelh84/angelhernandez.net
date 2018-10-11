@@ -1,0 +1,20 @@
+.help-active {
+    background-color: #5A5A5C;
+}
+
+.nav-page-label {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 60px;
+    margin-right: 20px;
+    opacity: 0;
+    transition: opacity 0.35s;
+}
+
+.nav-page-label.open {
+    opacity: 1;
+}
+
+.faq-content .subhead {
+    margin-top: 20px;
+}

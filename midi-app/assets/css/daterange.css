@@ -514,6 +514,10 @@
     width: 100%;
 }
 
+.midi-daterangepicker ul li a:hover {
+    background-color: #5A5A5C;
+}
+
 .midi-daterangepicker ul li a .fa {
     font-size: 24px;
     line-height: 52px;
