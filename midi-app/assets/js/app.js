@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var urlDataFilename = pathArr[pathLength - 1];
     var hostPathname = []
     var hostPathnameAppend = function () {
-      for (var i = 0; i > pathLength - 3; i++) {
-        hostPathname.push(pathLength[i]);
+      for (var i = 0; i < pathLength - 3; i++) {
+        hostPathname.push(pathArr[i]);
       }
     };
     hostPathnameAppend();
