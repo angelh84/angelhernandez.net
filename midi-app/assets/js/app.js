@@ -174,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var pathArr = pathname.split('/');
     var pathLength = pathArr.length;
     var urlDataType = pathArr[pathLength - 3]; 
-    var urlDataRangeNumber = pathArr[pathLength - 2];
     var urlDataFilename = pathArr[pathLength - 1];
     var hostPathname = []
     var hostPathnameAppend = function () {
@@ -187,21 +186,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var newHostPathname = hostPathname.join('/');
 
     if (label === 'last 30 days') {
-      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename);
-      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename
     } else if (label === 'last 60 days') {
-      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename);
-      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename
     } else if (label === 'last 90 days') {
-      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename);
-      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename
     }
 
-    console.log(urlDataType)
-    console.log(urlDataRangeNumber);
-    console.log(urlDataFilename);
-    console.log('hostPathname ' + hostPathname)
-    
+    // console.log(urlDataType)
+    // console.log(urlDataRangeNumber);
+    // console.log(urlDataFilename);
+    // console.log(console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename))
   }
 
 
