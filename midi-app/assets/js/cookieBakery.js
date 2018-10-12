@@ -52,35 +52,3 @@ var cookieBakery = (function () {
     }
 
 })();
-
-
-/* -------------------- COOKIE AUTH MANAGEMENT --------------------- */
-
-
-var logoutURL = function (label) {
-    var pathname = window.location.pathname;
-    var pathHost = window.location.host;
-    var pathArr = pathname.split('/');
-    var pathLength = pathArr.length;
-    var hostPathnameAppend = function () {
-        var hostPathnameArr = [];
-        for (var i = 0; i < pathLength - 3; i++) {
-        hostPathnameArr.push(pathArr[i]);
-        }
-        return hostPathnameArr;
-    };
-    var newHostPathname = hostPathnameAppend().join('/');
-
-    return 'http://' + pathHost + newHostPathname + '/index.html';
-
-    // console.log(urlUserType)
-    // console.log(urlDataRangeNumber);
-    // console.log(urlDataFilename);
-    // console.log(console.log('http://' + pathHost + newHostPathname + '/' + urlUserType + '/30/' + urlDataFilename))
-}
-
-
-var loggedIn = cookieBakery.check('demo');
-if (loggedIn === null) {
-    window.location.href = logoutURL();
-};
