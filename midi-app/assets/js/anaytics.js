@@ -190,34 +190,10 @@ $('.reason-drop').on('change', function (e) {
     assignOptions($select, val);
 })
 
-$('.results-drop').on('change', function (e) {
+$('.price-drop').on('change', function (e) {
     e.preventDefault();
     var val = $(this).val().toLowerCase();
-    var $select = $('.results-drop-sub');
-
-    assignOptions($select, val);
-})
-
-$('.alerts-drop').on('change', function (e) {
-    e.preventDefault();
-    var val = $(this).val().toLowerCase();
-    var $select = $('.alerts-drop-sub');
-
-    assignOptions($select, val);
-})
-
-$('.alerts-drop').on('change', function (e) {
-    e.preventDefault();
-    var val = $(this).val().toLowerCase();
-    var $select = $('.alerts-drop-sub');
-
-    assignOptions($select, val);
-})
-
-$('.performance-drop').on('change', function (e) {
-    e.preventDefault();
-    var val = $(this).val().toLowerCase();
-    var $select = $('.performance-drop-sub');
+    var $select = $('.price-drop-sub');
 
     assignOptions($select, val);
 })
@@ -238,6 +214,37 @@ $('.ratio-drop').on('change', function (e) {
     assignOptions($select, val);
 })
 
+$('.forecast-drop').on('change', function (e) {
+    e.preventDefault();
+    var val = $(this).val().toLowerCase();
+    var $select = $('.forecast-drop-sub');
+
+    assignOptions($select, val);
+})
+
+$('.performance-drop').on('change', function (e) {
+    e.preventDefault();
+    var val = $(this).val().toLowerCase();
+    var $select = $('.performance-drop-sub');
+
+    assignOptions($select, val);
+})
+
+$('.results-drop').on('change', function (e) {
+    e.preventDefault();
+    var val = $(this).val().toLowerCase();
+    var $select = $('.results-drop-sub');
+
+    assignOptions($select, val);
+})
+
+$('.alerts-drop').on('change', function (e) {
+    e.preventDefault();
+    var val = $(this).val().toLowerCase();
+    var $select = $('.alerts-drop-sub');
+
+    assignOptions($select, val);
+})
 
 
 // ======== BREAKDOWN SLIDE MODAL ======= //

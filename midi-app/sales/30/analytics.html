@@ -438,10 +438,10 @@
 
 					<!-- forecast -->
 					<div class="row forecast-row third-row">
-						<div class="col-sm-6">
+						<div class="col-sm-12">
 							<div class="row analytics-drop-row">
-								<div class="col-sm-6">
-									<select class="select price-drop">
+								<div class="col-sm-6 col-lg-3">
+									<select class="select forecast-drop">
 										<option value="all">Entire Portfolio</option>
 										<option value="mid">MID</option>
 										<option value="processor">Processor</option>
@@ -449,63 +449,64 @@
 										<option value="Vertical">Vertical</option>
 									</select>
 								</div>
-								<div class="col-sm-6">
-									<select class="multiselect-filtering price-drop-sub" multiple="multiple" disabled>
+								<div class="col-sm-6 col-lg-3">
+									<select class="multiselect-filtering forecast-drop-sub" multiple="multiple" disabled>
 									</select>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="panel panel-flat">
-								<div class="panel-heading">
-									<h6 class="panel-title"><span class="month"></span> <span class="year"></span> FORECAST
-									</h6>
-									<div class="heading-elements">
-										<button class="panel-question" data-message="This is a forecasted look at your potential chargebacks for the current month. Please note that this always displays a projection for the current month regardless of the date range selected."><i class="fas fa-question-circle"></i></button>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title"><span class="month"></span> <span class="year"></span> FORECAST</h6>
+											<div class="heading-elements">
+												<button class="panel-question" data-message="This is a forecasted look at your potential chargebacks for the current month. Please note that this always displays a projection for the current month regardless of the date range selected."><i class="fas fa-question-circle"></i></button>
+											</div>
+										</div>
+				
+										<div class="table-responsive">
+											<table class="forecast-table table table-xlg text-nowrap">
+												<tbody>
+												<tr>
+													<td class="text-center">
+														<div class="total">
+															<span class="num">2</span>
+															<span class="title">Total Count</span>
+														</div>
+													</td>
+				
+													<td class="text-center">
+														<div class="visa">
+															<span class="num">1</span>
+															<span class="title">VISA</span>
+														</div>
+													</td>
+				
+													<td class="text-center">
+														<div class="mastercard">
+															<span class="num">1</span>
+															<span class="title">MasterCard</span>
+														</div>
+													</td>
+				
+													<td class="text-center">
+														<div class="discover">
+															<span class="num">0</span>
+															<span class="title">Discover</span>
+														</div>
+													</td>
+				
+													<td class="text-center">
+														<div class="amex">
+															<span class="num">0</span>
+															<span class="title">Amex</span>
+														</div>
+													</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
 									</div>
-								</div>
-		
-								<div class="table-responsive">
-									<table class="forecast-table table table-xlg text-nowrap">
-										<tbody>
-										<tr>
-											<td class="text-center">
-												<div class="total">
-													<span class="num">2</span>
-													<span class="title">Total Count</span>
-												</div>
-											</td>
-		
-											<td class="text-center">
-												<div class="visa">
-													<span class="num">1</span>
-													<span class="title">VISA</span>
-												</div>
-											</td>
-		
-											<td class="text-center">
-												<div class="mastercard">
-													<span class="num">1</span>
-													<span class="title">MasterCard</span>
-												</div>
-											</td>
-		
-											<td class="text-center">
-												<div class="discover">
-													<span class="num">0</span>
-													<span class="title">Discover</span>
-												</div>
-											</td>
-		
-											<td class="text-center">
-												<div class="amex">
-													<span class="num">0</span>
-													<span class="title">Amex</span>
-												</div>
-											</td>
-										</tr>
-										</tbody>
-									</table>
 								</div>
 							</div>
 						</div>
@@ -514,9 +515,9 @@
 
 					<!-- performance -->
 					<div class="row performance-row fourth-row">
-						<div class="col-sm-6">
+						<div class="col-sm-12">
 							<div class="row analytics-drop-row">
-								<div class="col-sm-6">
+								<div class="col-sm-6 col-lg-3">
 									<select class="select performance-drop">
 										<option value="all">Entire Portfolio</option>
 										<option value="mid">MID</option>
@@ -525,33 +526,35 @@
 										<option value="Vertical">Vertical</option>
 									</select>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-6 col-lg-3">
 									<select class="multiselect-filtering performance-drop-sub" multiple="multiple" disabled>
 									</select>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="panel panel-flat performance-panel">
-								<div class="panel-heading">
-									<h6 class="panel-title">HISTORICAL PERFORMANCE<h6>
-									<div class="heading-elements performance-heading">
-										<select class="multiselect" multiple="multiple">
-											<option value="total" selected="selected">Total</option>
-											<option value="visa" selected="selected">Visa</option>
-											<option value="mastercard" selected="selected">MasterCard</option>
-											<option value="discover" selected="selected">Discover</option>
-											<option value="amex" selected="selected">American Express</option>
-										</select>
-										<button class="panel-question" data-message="This is a look at your performance over the past year. Use this graph to see peaks, trends and improvements in your chargeback history over time. You can choose to view chargeback history for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i class="fas fa-question-circle"></i></button>
-									</div>
-								</div>
-		
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="chart-container text-center">
-												<p class="temp-chart-container"><strong>[ LINE CHART ]</strong></p>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="panel panel-flat performance-panel">
+										<div class="panel-heading">
+											<h6 class="panel-title">HISTORICAL PERFORMANCE</h6>
+											<div class="heading-elements performance-heading">
+												<select class="multiselect" multiple="multiple">
+													<option value="total" selected="selected">Total</option>
+													<option value="visa" selected="selected">Visa</option>
+													<option value="mastercard" selected="selected">MasterCard</option>
+													<option value="discover" selected="selected">Discover</option>
+													<option value="amex" selected="selected">American Express</option>
+												</select>
+												<button class="panel-question" data-message="This is a look at your performance over the past year. Use this graph to see peaks, trends and improvements in your chargeback history over time. You can choose to view chargeback history for all credit cards or select your desired view by turning the credit card icons on and off by clicking on them."><i class="fas fa-question-circle"></i></button>
+											</div>
+										</div>
+				
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="chart-container text-center">
+														<p class="temp-chart-container"><strong>[ LINE CHART ]</strong></p>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -621,8 +624,8 @@
 													<span>Amount Reversed*</span>
 													<p>$0</p>
 												</div>
+												<p class="fine-print">* Based on selected date range</p>
 											</div>
-											<p class="fine-print">* Based on selected date range</p>
 										</div>
 									</div>
 								</div>
