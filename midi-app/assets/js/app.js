@@ -835,9 +835,9 @@ $('.panel').on('click', '.close-pop', function (e) {
     var newHostPathname = hostPathnameAppend().join('/');
     
     if (label === 'demo1') {
-      window.location.href = 'http://' + pathHost + newHostPathname + '/sales/' + urlDataRangeNumber + '/' + urlDataFilename
+      window.location.href = 'http://' + pathHost + newHostPathname + '/sales/' + urlDataRangeNumber + '/dashboard.html';
     } else if (label === 'demo2') {
-      window.location.href = 'http://' + pathHost + newHostPathname + '/prevention/' + urlDataRangeNumber + '/' + urlDataFilename
+      window.location.href = 'http://' + pathHost + newHostPathname + '/prevention/' + urlDataRangeNumber + '/prevention.html';
     }
 
     // console.log(urlUserType)
