@@ -8,15 +8,15 @@
     <title>Midigator - Dashboard</title>
 
     <!-- Global stylesheets -->
-    <link href="assets/css/FontAwesome.css" rel="stylesheet">
-    <link href="global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/core.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/daterange.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/midi.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/charts.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/FontAwesome.css" rel="stylesheet">
+    <link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/daterange.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/midi.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/charts.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 </head>
 
@@ -25,13 +25,12 @@
     <!-- Main navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img class="logo" src="../../global_assets/images/logo.png" alt=""></a>
             <div class="demo-drop-container">
-                <select class="select">
-                    <option value="demo1">(1) Demo</option>
-                    <option value="demo2">(2) Demo</option>
-                    <option value="demo3">(3) Demo</option>
-                </select>
+				<select class="select demo-drop">
+					<option value="demo1">Sales</option>
+					<option value="demo2">Prevention & Self Managed Alerts</option>
+				</select>
             </div>
 
             <ul class="nav navbar-nav visible-xs-block">
@@ -55,23 +54,23 @@
                         </span>
                     </button>
                     <ul>
-                        <li>
-                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="profile.html"
-                                data-original-title="My Account">
+						<li>
+                            <a data-popup="tooltip" title="My Account"
+							data-placement="bottom" href="profile.html">
                                 <span class="fa fa-user"></span>
                             </a>
-                        </li>
-                        <li>
-                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="help.html"
-                                data-original-title="Help &amp; FAQ">
-                                <span class="fa fa-question-circle"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" href="index.html"
-                                data-original-title="Log Out">
-                                <span class="fa fa-sign-out-alt"></span></a>
-                        </li>
+						</li>
+						<li>
+							<a data-popup="tooltip" title="Help & FAQs"
+							data-placement="bottom" href="help.html">
+								<span class="fa fa-question-circle"></span>
+							</a>
+						</li>
+						<li>
+							<a data-popup="tooltip" title="Logout"
+							data-placement="bottom" href="index.html">
+								<span class="fa fa-sign-out-alt"></span></a>
+						</li>
                     </ul>
 
                     <section id="date-range">
@@ -123,7 +122,7 @@
                                     <a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
                                 </li>
                                 <li>
-                                    <a href="chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+                                    <a href="manager-chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
                                 </li>
                                 <!-- /main -->
                             </ul>
@@ -463,7 +462,7 @@
                                                         <td>0</td>
                                                         <td>0</td>
                                                         <td>0%</td>
-                                                        <td>0</td>
+                                                        <td class="table-notification">0</td>
                                                         <td>0.00</td>
                                                         <td>0.00</td>
                                                         <td>0</td>
@@ -618,27 +617,28 @@
 
 
     <!-- Core JS files -->
-    <script src="global_assets/js/plugins/loaders/pace.min.js"></script>
-    <script src="global_assets/js/core/libraries/jquery.min.js"></script>
-    <script src="global_assets/js/core/libraries/bootstrap.min.js"></script>
-    <script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
-    <script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
-    <script src="global_assets/js/plugins/forms/styling/uniform.min.js"></script>
-    <script src="global_assets/js/plugins/forms/styling/switchery.min.js"></script>
-    <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
-    <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
-    <script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
-    <script src="assets/js/tables/jquery.datatable.min.js"></script>
+    <script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
+    <script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
+    <script src="../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="../../global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script src="../../assets/js/tables/jquery.datatable.min.js"></script>
+    <script src="../../assets/js/tables/dataTables.colReorder.min.js"></script>
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
-    <script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
-    <script src="global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
-    <script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
-    <script type="text/javascript" src="assets/js/highcharts.js"></script>
+    <script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script type="text/javascript" src="../../assets/js/highcharts.js"></script>
 
-    <script src="assets/data/cid_15/dashboard.js"></script>
-    <script type="text/javascript" src="assets/js/charts/linechart.js"></script>
+    <script src="../../assets/data/cid_15/dashboard.js"></script>
+    <script type="text/javascript" src="../../assets/js/charts/linechart.js"></script>
 
     <script type="text/javascript">
         lineChart("chargeback_ratio", chargeback_ratio_json);
@@ -646,9 +646,9 @@
     </script>
 
 
-    <script src="assets/js/notifications.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="../../assets/js/notifications.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
+    <script src="../../assets/js/app.js"></script>
     <!-- /theme JS files -->
 
 </body>

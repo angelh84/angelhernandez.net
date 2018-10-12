@@ -4,15 +4,17 @@
 
 .nav-page-label {
     display: inline-block;
-    text-transform: uppercase;
+    position: absolute;
+    right: 0;
     font-size: 16px;
     line-height: 60px;
     margin-right: 20px;
+    transition: all 0.35s;
     opacity: 0;
-    transition: opacity 0.35s;
 }
 
 .nav-page-label.open {
+    right: 185px;
     opacity: 1;
 }
 
@@ -45,8 +47,8 @@
     color: #fff;
     width: 100%;
     border: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
     transition: background-color 0.25s;
     font-weight: normal;
 }

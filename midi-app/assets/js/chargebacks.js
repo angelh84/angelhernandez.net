@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var tableInit = function ($table) {
         var table = $table.DataTable({
+            colReorder: true,
             "language": {
                 "lengthMenu":     "Display _MENU_ records",
                 "search":         "",

@@ -1,77 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-  barChart("preventionAnalytics", prevention_analytics_marketing_source_json);
-  toggleOverlay("Marketing Source");
-  
-  $("#prevention_analytics_select").on("change", function(elm) {
-    switch ($(this).val()) {
-      case "Marketing Source":
-        barChart("preventionAnalytics", prevention_analytics_marketing_source_json);
-        break;
-      case "Rebill Cycle":
-        barChart("preventionAnalytics", prevention_analytics_rebill_cycle_json);
-        break;
-      case "Product":
-        barChart("preventionAnalytics", prevention_analytics_product_json);
-        break;
-      case "Country":
-        barChart("preventionAnalytics", prevention_analytics_country_json);
-        break;
-      case "Price Point":
-        doublePieChart("preventionAnalytics", prevention_analytics_price_point_json, 'price-point');
-        setHiddenDefaultLegend("price_point_legends_overlay_preventionAnalytics", prevention_analytics_price_point_json);
-        break;
-      case "BIN Number":
-        doublePieChart("preventionAnalytics", prevention_analytics_bin_number_json, "bin-number");
-        setHiddenDefaultLegend("bin_number_legends_overlay_preventionAnalytics", prevention_analytics_bin_number_json);
-        break;
-    }
-    updatePreventionAnalyticsTitle($(this).val());
-    toggleOverlay($(this).val());
-  });
-  
-  function updatePreventionAnalyticsTitle(name) {
-    $("#prevention_analytics_title").html("PREVENTION ANALYTICS - " + name.toUpperCase());
-  }
-  
-  function toggleOverlay(series) {
-    $(".graph-overlay").each(function(key, elm) {
-      $(elm).hide();
-      if ($(elm).data('series').includes(series.toLowerCase().replace(" ", "-"))) {
-        $(elm).show();
-      }
-    });
-  }
-  
-  function setHiddenDefaultLegend(elm, data) {
-    let overlayData = {};
-    let params = [];
-    for (let i = 0; i < data.length; i++) {
-      if (!overlayData.percentage || Number(data[i].overlay.percentage) > Number(overlayData.percentage)) {
-        overlayData = data[i].overlay;
-      }
-    }
-    if (elm == "bin_number_legends_overlay_preventionAnalytics") {
-      params = [overlayData.legend, overlayData.bank, overlayData.count, overlayData.percentage];
-    } else {
-      params = [overlayData.legend, overlayData.count, overlayData.percentage];
-    }
-    updatePreventionAnalyticsLegend(elm, params, true);
-  }
-
-
-        // ========================================
+    
+    // ========================================
     //
     // Datatable: Initialize
     //
     // ========================================
 
-    var $totalsTable = $('#totals_table');
-    var $breakdownTable = $('#breakdown_table');
+    var $matchTable = $('#refunds_table');
+    var $processTable = $('#resolve_table');
+    var $completedTable = $('#completed_alert_table');
 
     var tableInit = function ($table) {
         var table = $table.DataTable({
             colReorder: true,
+            "columnDefs": [
+                { 
+                    "orderable": false, 
+                    "targets": 0,
+                    "className": "text-center actions"
+                }
+            ],
+            "order": [[ 1, 'asc' ]],
             "language": {
                 "lengthMenu":     "Display _MENU_ records",
                 "search":         "",
@@ -120,8 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // INIT ALL TABLES
-    tableInit($totalsTable);
-    tableInit($breakdownTable);
+    tableInit($matchTable);
+    tableInit($processTable);
+    tableInit($completedTable);
     
 
     // Build Show / Hide dropdown
@@ -174,28 +124,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return $dropUl;
     }
-
-
-    $breakdownTable
+  
+    $matchTable
         .parents('.dataTables_wrapper')
         .find('.search')
-        .prepend(searchDrop($breakdownTable));
+        .prepend(searchDrop($matchTable));
 
+    $processTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($processTable));
+
+    $completedTable
+        .parents('.dataTables_wrapper')
+        .find('.search')
+        .prepend(searchDrop($completedTable));
     
-    // ========================================
-    //
-    // Daterange drop
-    //
-    // ========================================
 
-    $('.tab').on('click', function () {
-        var $daterangeDrop = $('.daterange-drop').siblings('.select2-container');
-        if ($(this).hasClass('showDateDrop')) {
-            $daterangeDrop.addClass('showDateDrop');
-        } else {
-            $daterangeDrop.removeClass('showDateDrop');
-        }
-    })
   
     // ========================================
     //
@@ -212,14 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         return tableHeaders;
     }
-    
-    $('.multiselect').multiselect({
-      buttonText: function () {
-          return 'Options'
-      }
-    });
 
     // Styled checkboxes/radios
     $('.styled').uniform();
-  
-  });
+
+
+    
+});

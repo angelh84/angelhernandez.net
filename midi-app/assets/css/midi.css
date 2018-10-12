@@ -730,6 +730,11 @@ label[for=color_picker_aTBEU_0] i {
 	vertical-align: middle;
 }
 
+.table-notification {
+	border-bottom: 3px solid #ffb500;
+}
+
+
 @media(min-width: 769px) {
 	.navbar {
 		height: 63px;

@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     var chargebacks = $('#source_table').DataTable({
+        colReorder: true,
         "language": {
             "lengthMenu":     "Display _MENU_ records",
             "search":         "",

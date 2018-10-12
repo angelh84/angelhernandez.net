@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Midigator - Help</title>
+	<title>Midigator - Account</title>
 
 	<!-- Global stylesheets -->
 	<link href="assets/css/FontAwesome.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/midi.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/help.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/account.css" rel="stylesheet" type="text/css">
 	
     
 
@@ -29,10 +29,9 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
 			<div class="demo-drop-container">
-				<select class="select">
-					<option value="demo1">(1) Demo</option>
-					<option value="demo2">(2) Demo</option>
-					<option value="demo3">(3) Demo</option>
+				<select class="select demo-drop">
+					<option value="demo1">Sales</option>
+					<option value="demo2">Prevention & Self Managed Alerts</option>
 				</select>
 			</div>
 
@@ -45,7 +44,7 @@
 		<div class="navbar-collapse collapse" id="navbar-mobile">
 			<ul class="nav navbar-nav navbar-right">
 				<div class="midi-daterangepicker">
-					<p class="nav-page-label">HELP & FAQs</p>
+					<p class="nav-page-label">My Account</p>
 					<button type="button" class="navbar-toggle">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="box">
@@ -56,19 +55,20 @@
 					</button>
 					<ul>
 						<li>
-							<a title="" data-popup="tooltip" data-placement="bottom" href="profile.html" title="My Account">
-								<span class="fa fa-user"></span>
-							</a>
+                            <a data-popup="tooltip" title="My Account"
+							data-placement="bottom" href="profile.html">
+                                <span class="fa fa-user"></span>
+                            </a>
 						</li>
 						<li>
-							<a title="" data-toggle="tooltip" data-placement="bottom" data-container="body" class="help-active"
-								href="help.html" data-original-title="Help &amp; FAQ">
+							<a data-popup="tooltip" title="Help & FAQs"
+							data-placement="bottom" href="help.html">
 								<span class="fa fa-question-circle"></span>
 							</a>
 						</li>
 						<li>
-							<a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-								href="index.html" data-original-title="Log Out">
+							<a data-popup="tooltip" title="Logout"
+							data-placement="bottom" href="index.html">
 								<span class="fa fa-sign-out-alt"></span></a>
 						</li>
 					</ul>
@@ -106,7 +106,7 @@
 									<a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
 								</li>
 								<li>
-									<a href="chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+									<a href="manager-chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
 								</li>
 								<!-- /main -->
 							</ul>
@@ -120,15 +120,13 @@
 
 
 			<!-- Main content -->
-			<div class="content-wrapper faq-content">
+			<div class="content-wrapper">
 
 				<!-- Page header -->
 				<div class="page-header">
 					<div class="page-header-content">
 						<div class="page-title">
-							<h1 class='analytics-h1'>HELP AND FAQs</h1>
-							<p class="subhead">Still have questions?<br>
-							Contact us at 1-800-960-2184 or Email us at <a href="mailto:support@midigator.com">support@midigator.com</a></p>
+							<h1 class='analytics-h1'>MY ACCOUNT</h1>
 						</div>
 					</div>
 				</div>
@@ -138,12 +136,50 @@
 				<!-- Content area -->
 				<div class="content">
 					<!-- Main charts -->
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-sm-12">
-								<p>faq content here</p>
+					<div class="tabbable">
+						<ul class="nav nav-tabs nav-tabs-bottom bottom-divided">
+							<li class="active"><a href="#bottom-divided-tab1" data-toggle="tab" class="tab">GENERAL</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<!-- tab1 -->
+							<div class="tab-pane active" id="bottom-divided-tab1">
+								<div class="content account-content">
+									<div class="row">
+										<div class="col-sm-6">
+											<p class="account-form-title">ACCOUNT DETAILS <span>* indicates a required field</span></p>
+											<label>First Name *</label>
+											<input type="text">
+											<label>Last Name *</label>
+											<input type="text">
+											<label>Phone *</label>
+											<input type="number">
+											<label>Email *</label>
+											<input type="email">
+										</div>
+										<div class="col-sm-6">
+											<p class="account-form-title">EDIT PASSWORD</p>
+											<label>Current Password</label>
+											<input type="password">
+											<label>New Password</label>
+											<input type="password">
+											<label>Password Confirm</label>
+											<input type="password">
+											<label>&nbsp;</label>
+											<button type="button" class="account-submit-button">SAVE CHANGES</button>
+										</div>
+										<!-- /col -->
+									</div>
+									<!-- /row -->
+								</div>
+								<!-- /content -->
 							</div>
+							<!-- /tab1 -->
 						</div>
+						<!-- /tab-content -->
+								
+						</div>
+						<!-- /tabbable -->
 					</div>
 
 					<!-- Footer -->
@@ -319,31 +355,23 @@
 	<!-- /Breakdown Modal Slide -->
 
 	<!-- Core JS files -->
-	<script src="global_assets/js/plugins/loaders/pace.min.js"></script>
 	<script src="global_assets/js/core/libraries/jquery.min.js"></script>
 	<script src="global_assets/js/core/libraries/bootstrap.min.js"></script>
-	<script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
-	<script src="global_assets/js/plugins/forms/styling/uniform.min.js"></script>
-	<script src="global_assets/js/plugins/forms/styling/switchery.min.js"></script>
 	<script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
     <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
-	<script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
-	<script src="assets/js/tables/jquery.datatable.min.js"></script>
 	<!-- /core JS files -->
 
-    <!-- Theme JS files -->
+	<!-- Theme JS files -->
 	<script src="global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
 	<script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
-
 	<script src="assets/js/notifications.js"></script>
-	<script src="assets/js/anaytics.js"></script>
 	<script src="assets/js/app.js"></script>
 	<!-- /theme JS files -->
 
 	<script>
 		setTimeout(function () {
 			$('.navbar-toggle').trigger('click');
-		}, 1000)
+		}, 500)
 
 		$('.navbar-toggle').on('click', function () {
 			setTimeout(function () {

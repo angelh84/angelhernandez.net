@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   
   let tableSettings = {
+    colReorder: true,
     "language": {
       "lengthMenu":     "Display _MENU_ records",
       "search":         "",

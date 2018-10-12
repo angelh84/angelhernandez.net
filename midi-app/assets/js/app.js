@@ -811,6 +811,21 @@ $('.panel').on('click', '.close-pop', function (e) {
     }, 100);
   }).resize();
 
+  // ========================================
+  //
+  // Demo Drop
+  //
+  // ========================================
+
+  $('.demo-drop').on('change', function () {
+    var val = $(this).val();
+    if (val === 'demo1') {
+      window.location.href = 'sales/30/dashboard.html'
+    } else {
+      window.location.href = 'prevention/30/dashboard.html'
+    }
+  });
+  
 
   // ========================================
   //

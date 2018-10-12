@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     var chargebacks = $('#chargebacks_table').DataTable({
+        colReorder: true,
         "columnDefs": [
             { 
                 "orderable": false, 

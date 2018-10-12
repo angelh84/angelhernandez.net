@@ -27,10 +27,9 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
         <div class="demo-drop-container">
-            <select class="select">
-                <option value="demo1">(1) Demo</option>
-                <option value="demo2">(2) Demo</option>
-                <option value="demo3">(3) Demo</option>
+            <select class="select demo-drop">
+                <option value="demo1">Sales</option>
+                <option value="demo2">Prevention & Self Managed Alerts</option>
             </select>
         </div>
 
@@ -56,20 +55,20 @@
                 </button>
                 <ul>
                     <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="profile.html" data-original-title="My Account">
+                        <a data-popup="tooltip" title="My Account"
+                        data-placement="bottom" href="profile.html">
                             <span class="fa fa-user"></span>
                         </a>
                     </li>
                     <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="help.html" data-original-title="Help &amp; FAQ">
+                        <a data-popup="tooltip" title="Help & FAQs"
+                        data-placement="bottom" href="help.html">
                             <span class="fa fa-question-circle"></span>
                         </a>
                     </li>
                     <li>
-                        <a title="" data-toggle="tooltip" data-placement="bottom" data-container="body"
-                           href="index.html" data-original-title="Log Out">
+                        <a data-popup="tooltip" title="Logout"
+                        data-placement="bottom" href="index.html">
                             <span class="fa fa-sign-out-alt"></span></a>
                     </li>
                 </ul>
@@ -123,7 +122,7 @@
                                 <a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
                             </li>
                             <li>
-                                <a href="chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+                                <a href="manager-chargebacks.html"><i class="fas fa-book"></i> <span>Manager</span></a>
                             </li>
                             <!-- /main -->
                         </ul>
@@ -572,6 +571,7 @@
 <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
 <script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
 <script src="assets/js/tables/jquery.datatable.min.js"></script>
+<script src="assets/js/tables/dataTables.colReorder.min.js"></script>
 <!-- /core JS files -->
 
 <!-- Theme JS files -->

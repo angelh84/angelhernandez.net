@@ -4,17 +4,52 @@
 
 .nav-page-label {
     display: inline-block;
+    position: absolute;
+    right: 0;
     font-size: 16px;
     line-height: 60px;
     margin-right: 20px;
+    transition: all 0.35s;
     opacity: 0;
-    transition: opacity 0.35s;
 }
 
 .nav-page-label.open {
+    right: 185px;
     opacity: 1;
 }
 
 .faq-content .subhead {
     margin-top: 20px;
+}
+
+.panel-title>a {
+    font-size: 18px;
+    color: #4c4c4c;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.25s;
+    background-color: #fffcda;
+}
+
+.panel-collapse {
+    background-color: #fffcda;
+}
+
+.panel-title>a.collapsed {
+    background-color: #fff;
+}
+
+.panel-title>a.collapsed:hover {
+    background-color: #efefef;
+}
+
+.panel-heading {
+    padding: 0;
+}
+
+.panel-body {
+    border: 0 !important;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #848484;
 }
