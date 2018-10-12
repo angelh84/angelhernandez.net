@@ -43,7 +43,7 @@
         this.showDropdowns = false;
         this.showWeekNumbers = false;
         this.showISOWeekNumbers = false;
-        this.showCustomRangeLabel = true;
+        this.showCustomRangeLabel = false;
         this.timePicker = false;
         this.timePicker24Hour = false;
         this.timePickerIncrement = 1;
@@ -52,10 +52,9 @@
         this.autoUpdateInput = true;
         this.alwaysShowCalendars = false;
         this.ranges = { 
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1,'month').startOf('month'), moment().subtract(1,'month').endOf('month')]
+            'Last 30 Days': [moment().subtract(1, 'months'), moment()],
+            'Last 60 Days': [moment().subtract(2, 'months'), moment()],
+            'Last 90 Days': [moment().subtract(3, 'months'), moment()],
         };
 
         this.opens = 'right';
@@ -655,7 +654,7 @@
             var firstDay = moment([year, month, 1]);
             var lastDay = moment([year, month, daysInMonth]);
             var lastMonth = moment(firstDay).subtract(1, 'month').month();
-            var lastYear = moment(firstDay).subtract(1, 'month').year();
+            var lastYear = moment(firstDay).subtract(1, 'year').year();
             var daysInLastMonth = moment([lastYear, lastMonth]).daysInMonth();
             var dayOfWeek = firstDay.day();
 

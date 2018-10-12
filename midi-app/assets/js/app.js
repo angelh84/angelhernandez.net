@@ -161,10 +161,48 @@ document.addEventListener('DOMContentLoaded', function() {
         '</div>' +
         '</div>'
     },
-    function(start, end) {
+    function(start, end, e) {
+      var label = e.toLowerCase();
       $('input[name=daterange]').val(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+      daterangeUpdateURL(label);
     }
   );
+
+  var daterangeUpdateURL = function (label) {
+    var pathname = window.location.pathname;
+    var pathHost = window.location.host;
+    var pathArr = pathname.split('/');
+    var pathLength = pathArr.length;
+    var urlDataType = pathArr[pathLength - 3]; 
+    var urlDataRangeNumber = pathArr[pathLength - 2];
+    var urlDataFilename = pathArr[pathLength - 1];
+    var hostPathname = []
+    var hostPathnameAppend = function () {
+      for (var i = 0; i > pathLength - 3; i++) {
+        hostPathname.push(pathLength[i]);
+      }
+    };
+    hostPathnameAppend();
+
+    var newHostPathname = hostPathname.join('/');
+
+    if (label === 'last 30 days') {
+      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename);
+      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename
+    } else if (label === 'last 60 days') {
+      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename);
+      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename
+    } else if (label === 'last 90 days') {
+      console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename);
+      // window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename
+    }
+
+    console.log(urlDataType)
+    console.log(urlDataRangeNumber);
+    console.log(urlDataFilename);
+    console.log('hostPathname ' + hostPathname)
+    
+  }
 
 
   // Collapse fixed navbar
@@ -867,7 +905,6 @@ $('.panel').on('click', '.close-pop', function (e) {
       filter: '<li class="multiselect-item multiselect-filter"><i class="icon-search4"></i> <input class="form-control" type="text"></li>'
     }
   });
-
 
   // Plugins
   // -------------------------

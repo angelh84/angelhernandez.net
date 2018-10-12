@@ -60,6 +60,10 @@ a:link {
 	transform: rotate(-90deg);
 }
 
+.navbar a.active {
+	background-color: #5A5A5C;
+}
+
 .navbar-brand {
   height: auto;
 }
@@ -143,7 +147,7 @@ a:link {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.open-sandwhich {
+.open-sandwich {
 	height: 37px;
 	width: 40px;
 	float: right;
@@ -154,11 +158,11 @@ a:link {
 	border: 0;
 }
 
-.open-sandwhich:hover {
+.open-sandwich:hover {
 	background-color: #5a5a5c;
 }
 
-.open-sandwhich .fa-bars {
+.open-sandwich .fa-bars {
 	color: #fff;
 	font-size: 24px;
 }
@@ -209,6 +213,12 @@ a:link {
 
 .daterange-predefined .fa-calendar {
 	font-size: 17px;
+}
+
+li[data-range-key="Last 7 Days"],
+li[data-range-key="This Month"],
+li[data-range-key="Last Month"] {
+	display: none;
 }
 
 .nav li.menu-pop a {
