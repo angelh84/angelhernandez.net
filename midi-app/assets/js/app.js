@@ -931,9 +931,8 @@ $('.panel').on('click', '.close-pop', function (e) {
       return hostPathnameArr;
     };
     var newHostPathname = hostPathnameAppend().join('/');
-    console.log(label)
+    
     if (label === 'last 30 days') {
-      console.log('test')
       window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlUserType + '/30/' + urlDataFilename
     } else if (label === 'last 60 days') {
       window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlUserType + '/60/' + urlDataFilename
@@ -957,6 +956,11 @@ $('.panel').on('click', '.close-pop', function (e) {
   $('input[name=daterange]').on('click', function (e) {
     updateRangeButton();
   })
+
+  $('body').on('click','a[data-original-title="Logout"]', function () {
+    cookieBakery.eat('demo');
+  })
+  
 
 
   // Plugins
