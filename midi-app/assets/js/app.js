@@ -162,42 +162,9 @@ document.addEventListener('DOMContentLoaded', function() {
         '</div>'
     },
     function(start, end, e) {
-      var label = e.toLowerCase();
       $('input[name=daterange]').val(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
-      daterangeUpdateURL(label);
     }
   );
-
-  var daterangeUpdateURL = function (label) {
-    var pathname = window.location.pathname;
-    var pathHost = window.location.host;
-    var pathArr = pathname.split('/');
-    var pathLength = pathArr.length;
-    var urlDataType = pathArr[pathLength - 3]; 
-    var urlDataFilename = pathArr[pathLength - 1];
-    var hostPathname = []
-    var hostPathnameAppend = function () {
-      for (var i = 0; i < pathLength - 3; i++) {
-        hostPathname.push(pathArr[i]);
-      }
-    };
-    hostPathnameAppend();
-
-    var newHostPathname = hostPathname.join('/');
-
-    if (label === 'last 30 days') {
-      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename
-    } else if (label === 'last 60 days') {
-      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/60/' + urlDataFilename
-    } else if (label === 'last 90 days') {
-      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlDataType + '/90/' + urlDataFilename
-    }
-
-    // console.log(urlDataType)
-    // console.log(urlDataRangeNumber);
-    // console.log(urlDataFilename);
-    // console.log(console.log('http://' + pathHost + newHostPathname + '/' + urlDataType + '/30/' + urlDataFilename))
-  }
 
 
   // Collapse fixed navbar
@@ -850,13 +817,40 @@ $('.panel').on('click', '.close-pop', function (e) {
   //
   // ========================================
 
+  var userTypeUpdateURL = function (label) {
+    var pathname = window.location.pathname;
+    var pathHost = window.location.host;
+    var pathArr = pathname.split('/');
+    var pathLength = pathArr.length;
+    var urlUserType = pathArr[pathLength - 3]; 
+    var urlDataRangeNumber = pathArr[pathLength - 2];
+    var urlDataFilename = pathArr[pathLength - 1];
+    var hostPathnameAppend = function () {
+      var hostPathnameArr = [];
+      for (var i = 0; i < pathLength - 3; i++) {
+        hostPathnameArr.push(pathArr[i]);
+      }
+      return hostPathnameArr;
+    };
+    var newHostPathname = hostPathnameAppend().join('/');
+    
+    if (label === 'demo1') {
+      window.location.href = 'http://' + pathHost + newHostPathname + '/sales/' + urlDataRangeNumber + '/' + urlDataFilename
+    } else if (label === 'demo2') {
+      window.location.href = 'http://' + pathHost + newHostPathname + '/prevention/' + urlDataRangeNumber + '/' + urlDataFilename
+    }
+
+    // console.log(urlUserType)
+    // console.log(urlDataRangeNumber);
+    // console.log(urlDataFilename);
+    // console.log(console.log('http://' + pathHost + newHostPathname + '/sales/' + urlDataRangeNumber + '/' + urlDataFilename))
+  }
+  
+
   $('.demo-drop').on('change', function () {
     var val = $(this).val();
-    if (val === 'demo1') {
-      window.location.href = 'sales/30/dashboard.html'
-    } else {
-      window.location.href = 'prevention/30/dashboard.html'
-    }
+    userTypeUpdateURL(val);
+    console.log('working?')
   });
   
 
@@ -901,6 +895,70 @@ $('.panel').on('click', '.close-pop', function (e) {
     }
   });
 
+  $('.ranges').css('visibility', 'hidden')
+
+  var updateRangeButton = function (label) {
+    var pathname = window.location.pathname;
+    var pathHost = window.location.host;
+    var pathArr = pathname.split('/');
+    var pathLength = pathArr.length;
+    var urlDateRangeNumber = pathArr[pathLength - 2];
+
+    $('.ranges').find('.active').removeClass('active');
+    if (urlDateRangeNumber === '30') {
+      $('.ranges').find('li[data-range-key="Last 30 Days"]').addClass('active')
+    } else if (urlDateRangeNumber === '60') {
+      $('.ranges').find('li[data-range-key="Last 60 Days"]').addClass('active')
+    } else if (urlDateRangeNumber === '90') {
+      $('.ranges').find('li[data-range-key="Last 90 Days"]').addClass('active')
+    }
+    $('.ranges').css('visibility', 'visible')
+  }
+
+  var daterangeUpdateURL = function (label) {
+    var pathname = window.location.pathname;
+    var pathHost = window.location.host;
+    var pathArr = pathname.split('/');
+    var pathLength = pathArr.length;
+    var urlUserType = pathArr[pathLength - 3]; 
+    var urlDataRangeNumber = pathArr[pathLength - 2];
+    var urlDataFilename = pathArr[pathLength - 1];
+    var hostPathnameAppend = function () {
+      var hostPathnameArr = [];
+      for (var i = 0; i < pathLength - 3; i++) {
+        hostPathnameArr.push(pathArr[i]);
+      }
+      return hostPathnameArr;
+    };
+    var newHostPathname = hostPathnameAppend().join('/');
+    console.log(label)
+    if (label === 'last 30 days') {
+      console.log('test')
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlUserType + '/30/' + urlDataFilename
+    } else if (label === 'last 60 days') {
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlUserType + '/60/' + urlDataFilename
+    } else if (label === 'last 90 days') {
+      window.location.href = 'http://' + pathHost + newHostPathname + '/' + urlUserType + '/90/' + urlDataFilename
+    }
+
+    
+
+    // console.log(urlUserType)
+    // console.log(urlDataRangeNumber);
+    // console.log(urlDataFilename);
+    // console.log(console.log('http://' + pathHost + newHostPathname + '/' + urlUserType + '/30/' + urlDataFilename))
+  }
+
+  $('.ranges').find('li').on('click', function () {
+    var label = $(this).text().toLowerCase();
+    daterangeUpdateURL(label)
+  })
+
+  $('input[name=daterange]').on('click', function (e) {
+    updateRangeButton();
+  })
+
+
   // Plugins
   // -------------------------
 
@@ -910,6 +968,9 @@ $('.panel').on('click', '.close-pop', function (e) {
 
   // Tooltip
   $('[data-popup="tooltip"]').tooltip();
+
+  // Styled checkboxes/radios
+  $('.styled').uniform();
 
 });
 

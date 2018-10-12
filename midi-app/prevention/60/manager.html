@@ -7,15 +7,15 @@
 	<title>Midigator - Manager Preventions</title>
 
 	<!-- Global stylesheets -->
-	<link href="assets/css/FontAwesome.css" rel="stylesheet">
-	<link href="global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/core.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/daterange.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/midi.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/chargebacks.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/FontAwesome.css" rel="stylesheet">
+	<link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/daterange.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/midi.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/chargebacks.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 </head>
 
@@ -24,11 +24,11 @@
 <!-- Main navbar -->
 <div class="navbar navbar-fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><img class="logo" src="global_assets/images/logo.png" alt=""></a>
+        <a class="navbar-brand" href="index.html"><img class="logo" src="../../global_assets/images/logo.png" alt=""></a>
         <div class="demo-drop-container">
             <select class="select demo-drop">
                 <option value="demo1">Sales</option>
-                <option value="demo2">Prevention & Self Managed Alerts</option>
+                <option value="demo2" selected="selected">Prevention & Self Managed Alerts</option>
             </select>
         </div>
 
@@ -67,7 +67,7 @@
                     </li>
                     <li>
                         <a data-popup="tooltip" title="Logout"
-                        data-placement="bottom" href="index.html">
+                        data-placement="bottom" href="../../index.html">
                             <span class="fa fa-sign-out-alt"></span></a>
                     </li>
                 </ul>
@@ -113,19 +113,13 @@
                         <ul class="navigation navigation-main navigation-accordion">
                             <!-- Main -->
                             <li>
-                                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
-                            </li>
-                            <li>
-                                <a href="analytics.html"><i class="far fa-chart-bar"></i> <span>Analytics</span></a>
-                            </li>
-                            <li>
                                 <a href="prevention.html"><i class="fas fa-shield-alt"></i> <span>Prevention</span></a>
                             </li>
                             <li>
                                 <a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
                             </li>
                             <li class="active">
-                                <a href="manager-prevention.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+                                <a href="manager.html"><i class="fas fa-book"></i> <span>Manager</span></a>
                             </li>
                             <!-- /main -->
                         </ul>
@@ -546,33 +540,6 @@
         <!-- notifications pop -->
         <div class="notifications-pop">
             <div class="notifications-wrap">
-                <button class="add-notification-button">Add Notification</button>
-                <h2>CURRENT NOTIFICATIONS</h2>
-                <div class="notification-holder chargeback">
-                    <button type="button" class="notification-switch"><i class="fas fa-toggle-on"></i></button>
-                    <button type="button" class="notification-trash"><i class="fas fa-trash-alt"></i></button>
-                    <button type="button" class="notification-edit"><i class="fas fa-edit"></i></button>
-                    <div class="notification-name">Kevin</div>
-                </div>
-                <div class="notification-check">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" class="styled">
-                            Send Daily Chargeback Report
-                        </label>
-                    </div>
-                    <div class="notification-input-wrap">
-                        <label for="chargeback-eamil-notification">Recipient Email Address</label>
-                        <div class="input-group">
-                            <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary" name="add">
-                                    <span class="fa fa-plus"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
                 <div class="notification-check prevention">
                     <div class="checkbox">
                         <label>
@@ -583,7 +550,7 @@
                     <div class="notification-input-wrap">
                         <label for="prevention-email-notification">Recipient Email Address</label>
                         <div class="input-group">
-                            <input type="email" class="form-control" name="alert_email_display_only" id="alert_email" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                            <input type="email" class="form-control" name="alert_email_display_only" placeholder="your@email.com" maxlength="255" autocomplete="off">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary" name="add">
                                     <span class="fa fa-plus"></span>
@@ -648,28 +615,28 @@
 
 
 <!-- Core JS files -->
-<script src="global_assets/js/plugins/loaders/pace.min.js"></script>
-<script src="global_assets/js/core/libraries/jquery.min.js"></script>
-<script src="global_assets/js/core/libraries/bootstrap.min.js"></script>
-<script src="global_assets/js/plugins/loaders/blockui.min.js"></script>
-<script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
-<script src="global_assets/js/plugins/forms/styling/uniform.min.js"></script>
-<script src="global_assets/js/plugins/forms/styling/switchery.min.js"></script>
-<script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
-<script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
-<script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
-<script src="assets/js/tables/jquery.datatable.min.js"></script>
-<script src="assets/js/tables/dataTables.colReorder.min.js"></script>
+<script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
+<script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
+<script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
+<script src="../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+<script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+<script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+<script src="../../global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+<script src="../../assets/js/tables/jquery.datatable.min.js"></script>
+<script src="../../assets/js/tables/dataTables.colReorder.min.js"></script>
 <!-- /core JS files -->
 
 <!-- Theme JS files -->
-<script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
-<script src="global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
-<script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
+<script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+<script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+<script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
-<script src="assets/js/notifications.js"></script>
-<script src="assets/js/manager-prevention.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="../../assets/js/notifications.js"></script>
+<script src="../../assets/js/manager-prevention.js"></script>
+<script src="../../assets/js/app.js"></script>
 <!-- /theme JS files -->
 
 </body>

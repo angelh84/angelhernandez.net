@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Midigator - Manager Preventions</title>
+
+	<!-- Global stylesheets -->
+	<link href="../../assets/css/FontAwesome.css" rel="stylesheet">
+	<link href="../../global_assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/core.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/components.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/daterange.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/midi.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/chargebacks.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+</head>
+
+<body class="navbar-top sidebar-xs">
+
+<!-- Main navbar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img class="logo" src="../../global_assets/images/logo.png" alt=""></a>
+        <div class="demo-drop-container">
+            <select class="select demo-drop">
+                <option value="demo1">Sales</option>
+                <option value="demo2" selected="selected">Prevention & Self Managed Alerts</option>
+            </select>
+        </div>
+
+        <ul class="nav navbar-nav visible-xs-block">
+            <li class="hidden-xs"><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a>
+            </li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav navbar-right">
+
+
+            <div class="midi-daterangepicker">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="box">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                </button>
+                <ul>
+                    <li>
+                        <a data-popup="tooltip" title="My Account"
+                        data-placement="bottom" href="profile.html">
+                            <span class="fa fa-user"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-popup="tooltip" title="Help & FAQs"
+                        data-placement="bottom" href="help.html">
+                            <span class="fa fa-question-circle"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-popup="tooltip" title="Logout"
+                        data-placement="bottom" href="../../index.html">
+                            <span class="fa fa-sign-out-alt"></span></a>
+                    </li>
+                </ul>
+
+                <section id="date-range">
+                    <form class="form-inline" _lpchecked="1">
+                        <select class="select daterange-drop">
+                            <option value="received">Date Received</option>
+                            <option value="processed">Processed Date</option>
+                            <option value="transaction">Transaction Date</option>
+                        </select>
+                        <div id="midigator-daterange" class="form-group daterange-capsule pull-right">
+                            <div class="daterange">
+                                <input type="text" name="daterange" readonly="" autocomplete="off">
+                            </div>
+                            <input type="hidden" id="hidden_d1" value="2018-09-01">
+                            <input type="hidden" id="hidden_d2" value="2018-09-30">
+                            <input type="hidden" id="hidden_save" value="1">
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+        </ul>
+    </div>
+
+</div>
+<!-- /navbar -->
+
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main sidebar-fixed">
+            <div class="sidebar-content">
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+                            <!-- Main -->
+                            <li>
+                                <a href="prevention.html"><i class="fas fa-shield-alt"></i> <span>Prevention</span></a>
+                            </li>
+                            <li>
+                                <a class="notifications" href="#"><i class="fas fa-exclamation-circle"></i> <span>Notifications</span></a>
+                            </li>
+                            <li class="active">
+                                <a href="manager.html"><i class="fas fa-book"></i> <span>Manager</span></a>
+                            </li>
+                            <!-- /main -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h1>MANAGER - PREVENTION</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabbable">
+                <ul class="nav nav-tabs nav-tabs-bottom bottom-divided">
+                    <li class="active"><a href="#bottom-divided-tab1" data-toggle="tab" class="tab">REFUND ORDER</a></li>
+                    <li><a href="#bottom-divided-tab2" data-toggle="tab" class="tab">RESOLVE ALERT</a></li>
+                    <li><a href="#bottom-divided-tab3" data-toggle="tab" class="tab showDateDrop">COMPLETED ALERT</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- tab1 -->
+                    <div class="tab-pane active" id="bottom-divided-tab1">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <div class="heading-elements">
+                                                <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                                        data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                                <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="refunds_table" class="display table table-xlg text-nowrap">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Actions</th>
+                                                                <th>Internal Alert ID</th>
+                                                                <th>Case ID</th>
+                                                                <th>Received Date</th>
+                                                                <th>Transaction Date</th>
+                                                                <th>Amount</th>
+                                                                <th>Currency</th>
+                                                                <th>BIN</th>
+                                                                <th>Last 4</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>ARN</th>
+                                                                <th>Reason Code</th>
+                                                                <th>Descriptor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /col -->          
+                                            </div>
+                                            <!-- /row -->
+                                        </div>
+                                        <!-- /container-fluid -->
+            
+                                    </div>
+                                    <!-- /panel -->
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /content -->
+                    </div>
+                    <!-- /tab1 -->
+
+                    <!-- tab2 -->
+                    <div class="tab-pane" id="bottom-divided-tab2">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <div class="heading-elements">
+                                                <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                                    data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                                <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="resolve_table" class="display table table-xlg text-nowrap">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Actions</th>
+                                                                <th>Internal Alert ID</th>
+                                                                <th>Case ID</th>
+                                                                <th>Received Date</th>
+                                                                <th>Transaction Date</th>
+                                                                <th>Amount</th>
+                                                                <th>Currency</th>
+                                                                <th>BIN</th>
+                                                                <th>Last 4</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>ARN</th>
+                                                                <th>Reason Code</th>
+                                                                <th>Descriptor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /col -->          
+                                            </div>
+                                            <!-- /row -->
+                                        </div>
+                                        <!-- /container-fluid -->
+                                    </div>
+                                    <!-- /panel -->
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /content -->
+                    </div>
+                    <!-- /tab2 -->
+
+                    <!-- tab3-->
+                    <div class="tab-pane" id="bottom-divided-tab3">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <div class="heading-elements">
+                                                <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                                    data-placement="top"><i class="icon-floppy-disk"></i></button>
+                                                <button class="panel-question-modal" data-toggle="modal" data-target="#modal_table_help"><i class="fas fa-question-circle"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="completed_alert_table" class="display table table-xlg text-nowrap">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Actions</th>
+                                                                <th>Internal Alert ID</th>
+                                                                <th>Case ID</th>
+                                                                <th>Received Date</th>
+                                                                <th>Transaction Date</th>
+                                                                <th>Amount</th>
+                                                                <th>Currency</th>
+                                                                <th>BIN</th>
+                                                                <th>Last 4</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>ARN</th>
+                                                                <th>Reason Code</th>
+                                                                <th>Descriptor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><div class="actions-wrap"><button type="button" class="btn btn-default btn-sm actions-btn"
+                                                                    data-popup="popover" data-trigger="focus" data-html="true"
+                                                                    data-content="<ul><li><a href='#'>Refund Order</a></li></ul>"><i
+                                                                        class="fas fa-bars"></i></button></div></td>
+                                                                <td>740387</td>
+                                                                <td>40K6YOX7D2N02VOGER664PXW7</td>
+                                                                <td>2018-10-11</td>
+                                                                <td>2018-10-04</td>
+                                                                <td>40.65</td>
+                                                                <td>USD</td>
+                                                                <td>433477</td>
+                                                                <td>6418</td>
+                                                                <td>--</td>
+                                                                <td>--</td>
+                                                                <td>24021218277005676326570</td>
+                                                                <td>--</td>
+                                                                <td>BGSRCHWEB8446505992</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /col -->          
+                                            </div>
+                                            <!-- /row -->
+                                        </div>
+                                        <!-- /container-fluid -->
+                                    </div>
+                                    <!-- /panel -->
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /content -->
+                    </div>
+                    <!-- /tab3 -->
+                </div>
+                <!-- /tab-content -->
+                    
+            </div>
+            <!-- /tabbable -->
+        </div>
+        <!-- /content-wrapper -->
+
+        <!-- notifications pop -->
+        <div class="notifications-pop">
+            <div class="notifications-wrap">
+                <div class="notification-check prevention">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="styled">
+                            Send Daily Prevention Report
+                        </label>
+                    </div>
+                    <div class="notification-input-wrap">
+                        <label for="prevention-email-notification">Recipient Email Address</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" name="alert_email_display_only" placeholder="your@email.com" maxlength="255" autocomplete="off">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary" name="add">
+                                    <span class="fa fa-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /notifications pop -->
+
+        <!-- help modal -->
+        <div id="modal_table_help" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title">HELP</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ALERT TYPE</strong><br>Indicates the type of Alert </p>
+                        <ul>
+                            <li><u>Unknown</u>: Unknown alert type.</li>
+                            <li><u>Issuer Alert</u>: The alert came from the issuing bank.</li>
+                            <li><u>Cancel</u>:  The transaction was cancelled before settlement.</li>
+                            <li><u>Dispute</u>:  this is a customer dispute alert.</li>
+                            <li><u>Fraud</u>:  this is a fraud alert.</li>
+                        </ul>
+                        <p></p>
+                        <p><strong>INTERNAL ALERT ID</strong><br>Unique identifier in Midigator database</p>
+                        <p><strong>CASE ID</strong><br>Unique case identifier as provided by either Ethoca or Verifi</p>
+                        <p><strong>RECEIVED DATE</strong><br>Date when the Alert was created by either Ethoca or Verifi.</p>
+                        <p><strong>TRANSACTION DATE</strong><br>Date when the original transaction happened</p>
+                        <p><strong>AMOUNT</strong><br>Amount of the original transaction</p>
+                        <p><strong>CURRENCY</strong><br>Currency of the original transaction</p>
+                        <p><strong>BIN</strong><br>First six digits of number of the credit card used in the original transaction</p>
+                        <p><strong>LAST 4</strong><br>Last four numbers of the credit card used in the original transaction</p>
+                        <p><strong>FIRST NAME</strong><br>Cardholder's first name</p>
+                        <p><strong>LAST NAME</strong><br>Cardholder's last name</p>
+                        <p><strong>ARN</strong><br>The Acquirer Reference Number associated with the transaction (if available)</p>
+                        <p><strong>REASON CODE</strong><br>The reason provided for the chargeback</p>
+                        <p><strong>DESCRIPTOR</strong><br>Descriptor associated to the MID through which the transaction was run</p>
+                        <p><strong>VENDOR NAME</strong><br>This is the Alert Vendor that originated the Alert in the first place</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /help modal -->
+    </div>
+    <!-- /page-content -->
+
+</div>
+<!-- /page-container -->
+
+
+
+
+
+<!-- Core JS files -->
+<script src="../../global_assets/js/plugins/loaders/pace.min.js"></script>
+<script src="../../global_assets/js/core/libraries/jquery.min.js"></script>
+<script src="../../global_assets/js/core/libraries/bootstrap.min.js"></script>
+<script src="../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+<script src="../../global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+<script src="../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+<script src="../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
+<script src="../../global_assets/js/plugins/notifications/jgrowl.min.js"></script>
+<script src="../../assets/js/tables/jquery.datatable.min.js"></script>
+<script src="../../assets/js/tables/dataTables.colReorder.min.js"></script>
+<!-- /core JS files -->
+
+<!-- Theme JS files -->
+<script src="../../global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+<script src="../../global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+<script src="../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
+
+<script src="../../assets/js/notifications.js"></script>
+<script src="../../assets/js/manager-prevention.js"></script>
+<script src="../../assets/js/app.js"></script>
+<!-- /theme JS files -->
+
+</body>
+</html>

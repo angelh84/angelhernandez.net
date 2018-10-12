@@ -744,6 +744,12 @@ label[for=color_picker_aTBEU_0] i {
 	border-bottom: 3px solid #ffb500;
 }
 
+.ranges ul li {
+	-webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
 
 @media(min-width: 769px) {
 	.navbar {
