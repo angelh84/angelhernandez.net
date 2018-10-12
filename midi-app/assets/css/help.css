@@ -28,11 +28,11 @@
     padding: 15px 20px;
     display: block;
     transition: background-color 0.25s;
-    background-color: #fffcda;
+    background-color: #fffeed;
 }
 
 .panel-collapse {
-    background-color: #fffcda;
+    background-color: #fffeed;
 }
 
 .panel-title>a.collapsed {
