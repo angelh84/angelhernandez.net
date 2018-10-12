@@ -750,6 +750,16 @@ label[for=color_picker_aTBEU_0] i {
     transition: none;
 }
 
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+	appearance: none;
+	border: 0;
+	background-color: transparent;
+}
+
 
 @media(min-width: 769px) {
 	.navbar {
