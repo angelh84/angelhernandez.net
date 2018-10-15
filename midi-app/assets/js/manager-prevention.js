@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .parents('.dataTables_wrapper')
         .find('.search')
         .prepend(searchDrop($completedTable));
-    
 
   
     // ========================================

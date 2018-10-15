@@ -22,6 +22,18 @@ a:link {
 	color: #408cc0;
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.italic {
+	font-style: italic;
+}
+
 .navbar-toggle {
 	height: 40px;
 	width: 40px;
@@ -89,6 +101,8 @@ a:link {
 
 .nav-tabs>li>a {
 	padding: 9px 20px;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .nav-tabs.nav {
@@ -99,10 +113,17 @@ a:link {
 	padding: 7px 0;
 }
 
+.navigation .fa-chart-bar {
+	font-size: 22px;
+}
+
 .navigation > li > a {
     padding-left: 17px;
     padding-right: 0;
-    height: 44px;
+	height: 44px;
+	color: #fff;
+	font-weight: 400;
+	font-size: 12px;
 }
 
 .navigation>li>a:hover {
@@ -116,7 +137,7 @@ a:link {
     transition: opacity 0.35s;
     display: inline-block;
     padding-left: 10px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .navigation li a:focus,
@@ -421,7 +442,8 @@ li[data-range-key="Last Month"] {
 .modal-title {
 	text-align: center;
 	border-bottom: 2px solid #AFD25C;
-    padding-bottom: 10px;
+	padding-bottom: 10px;
+	font-weight: 600;
 }
 
 .modal p {
@@ -435,6 +457,7 @@ li[data-range-key="Last Month"] {
     top: -20px;
     font-size: 25px;
     color: #fff;
+    opacity: 1;
 }
 
 #date-range {
@@ -784,7 +807,7 @@ select {
 		overflow: hidden;
 	}
 	.sidebar-xs .sidebar-main .navigation>li>a {
-		color: rgba(255,255,255,.75);
+		color: #fff;
 		padding-left: 17px;
 		padding-right: 0;
 	}

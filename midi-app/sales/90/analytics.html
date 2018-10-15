@@ -15,6 +15,7 @@
 	<link href="../../assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<link href="../../assets/css/midi.css" rel="stylesheet" type="text/css">
 	<link href="../../assets/css/analytics.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="../../assets/images/favicon.png">
 	<!-- /global stylesheets -->
 
 	<script src="../../assets/js/user.js"></script>
@@ -325,9 +326,8 @@
 								<div class="panel-heading">
 									<h6 class="panel-title">CHARGEBACK COUNT</h6>
 									<div class="heading-elements">
-										<button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
-                                        	data-placement="top"><i class="icon-floppy-disk"></i></button>
-										<button class="chart-refresh"><i class="fas fa-redo-alt"></i></button>
+										<!-- <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+                                        	data-placement="top"><i class="icon-floppy-disk"></i></button> -->
 										<button class="panel-question" data-message="<p>This is a look at various data points that affect your business. Use the dual variable analytics widgets side by side as a comparison tool or toggle between the menu items to see actionable chargeback and transaction data.</p>
 										<p><strong>Marketing Source</strong> can help tracing chargebacks to an individual affiliate or traffic source</p>
 										<p><strong>Chargeback Lag Time</strong> shows how many days elapse from the point in time when a transaction occurs and the corresponding chargeback is received. For the purpose of maintaining a high level of readability, the chart does not show values past 120 days</p>
@@ -339,7 +339,7 @@
 										<p><strong>BIN Number</strong> can help identify problematic BIN numbers and make adjustments to reduce chargebacks</p>"><i class="fas fa-question-circle"></i></button>
 									</div>
 								</div>
-								<div class="panel-subheading clearfix">
+								<!-- <div class="panel-subheading clearfix">
 									<div class="panel-drop count-drop">
 										<select class="multiselect" multiple="multiple">
 											<option value="total" selected="selected">Total</option>
@@ -349,7 +349,7 @@
 											<option value="amex" selected="selected">American Express</option>
 										</select>
 									</div>
-								</div>
+								</div> -->
 
 								<div class="container-fluid">
 									<div class="row">
@@ -383,9 +383,17 @@
 								<div class="panel-heading">
 									<h6 class="panel-title">CHARGEBACK RATIO</h6>
 									<div class="heading-elements">
-										<button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
-											data-placement="top"><i class="icon-floppy-disk"></i></button>
-										<button class="chart-refresh"><i class="fas fa-redo-alt"></i></button>
+										<!-- <button type="button" class="table-csv" data-popup="tooltip" title="Save as CSV"
+											data-placement="top"><i class="icon-floppy-disk"></i></button> -->
+										<div class="panel-drop">
+											<select class="select">
+												<option value="">Total</option>
+												<option value="visa">Visa</option>
+												<option value="mastercard">MasterCard</option>
+												<option value="discover">Discover</option>
+												<option value="amex">American Express</option>
+											</select>
+										</div>
 										<button class="panel-question" data-message="<p>This is a look at various data points that affect your business. Use the dual variable analytics widgets side by side as a comparison tool or toggle between the menu items to see actionable chargeback and transaction data.</p>
 											<p><strong>Marketing Source</strong> can help tracing chargebacks to an individual affiliate or traffic source</p>
 											<p><strong>Chargeback Lag Time</strong> shows how many days elapse from the point in time when a transaction occurs and the corresponding chargeback is received. For the purpose of maintaining a high level of readability, the chart does not show values past 120 days</p>
@@ -397,7 +405,7 @@
 											<p><strong>BIN Number</strong> can help identify problematic BIN numbers and make adjustments to reduce chargebacks</p>"><i class="fas fa-question-circle"></i></button>
 									</div>
 								</div>
-								<div class="panel-subheading clearfix">
+								<!-- <div class="panel-subheading clearfix">
 									<div class="panel-subheading-box">
 										<div class="ratio-radios">
 											<label class="radio-inline">
@@ -410,17 +418,9 @@
 												By Count
 											</label>
 										</div>
-										<div class="panel-drop">
-											<select class="select">
-												<option value="">Total</option>
-												<option value="visa">Visa</option>
-												<option value="mastercard">MasterCard</option>
-												<option value="discover">Discover</option>
-												<option value="amex">American Express</option>
-											</select>
-										</div>
+										
 									</div>
-								</div>
+								</div> -->
 
 								<div class="container-fluid">
 									<div class="row">
@@ -683,7 +683,7 @@
 								<button type="button" class="notification-switch"><i class="fas fa-toggle-on"></i></button>
 								<button type="button" class="notification-trash"><i class="fas fa-trash-alt"></i></button>
 								<button type="button" class="notification-edit"><i class="fas fa-edit"></i></button>
-								<div class="notification-name">Kevin</div>
+								<div class="notification-name">CB Ratio > 2.5% for MTD</div>
 							</div>
 							<div class="notification-check">
 								<div class="checkbox">
