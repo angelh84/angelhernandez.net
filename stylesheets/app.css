@@ -66,6 +66,19 @@ hr {
   border: solid #383838;
   border-width: 1px 0 0;
 }
+.top-bar-name {
+  font-weight: normal;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.top-bar-subhead {
+  font-size: 12px;
+  line-height: 10px;
+  color: #b5b5b5;
+  margin: 0;
+}
 #navigation-container {
   width: 100%;
   min-height: 80px;
@@ -77,21 +90,6 @@ hr {
   width: 220px;
   float: left;
   margin-top: 15px;
-}
-#navigation-container h1 {
-  margin-top: 15px;
-  margin-top: 0;
-  font-weight: normal;
-  color: #fff;
-}
-#navigation-container h1 span {
-  font-weight: bold;
-}
-#navigation-container h2 {
-  font-size: 12px;
-  line-height: 10px;
-  color: #b5b5b5;
-  margin: 0 0 0 75px;
 }
 #navigation-container nav {
   width: 303px;
@@ -128,6 +126,9 @@ hr {
   overflow: hidden;
   border-bottom: 1px solid #fff;
   background: url(../images/dark-body-bg.png) repeat 0 0;
+}
+#body-text-container h1 {
+  margin-bottom: 25px;
 }
 #body-text-container > div {
   display: none;

@@ -29,8 +29,8 @@
   <header class="row">
     <div class="twelve columns">
       <hgroup>
-        <h1>Angel <span>Hernandez</span> </h1>
-        <h2>web design &amp; development</h2>
+        <p class="top-bar-name">Angel <span>Hernandez</span> </p>
+        <p class="top-bar-subhead">Front End Engineer</p>
       </hgroup>
       <nav>
         <a id="nav-home" href="#home">Home</a>
@@ -45,20 +45,15 @@
   <div class="row" id="home-content">
     <div class="four columns">
       <div id="welcome-comp">
-        <p>Welcome to my</p>
-        <hgroup>
-          <h2>Web Design</h2>
-          <h3>PORTFOLIO</h3>
-        </hgroup>
-        <img id="splat" src="images/splat.png" alt="Web Design Splat">
-        <h4>Website design &amp; development, print, graphic and interface design.</h4>
+        <h1>Design, development & marketing.</h1>
       </div>
       <p>Overview of what I do:</p>
       <ul>
-        <li>Responsive / mobile friendly websites scripting with HTML5 / CSS 3 / jQuery.</li>
-        <li>Effective search engine optimization (SEO).</li>
-        <li>Branding and corporate identity.</li>
-		<li>Wordpress Development</li>
+        <li>Cross-functional, mobile first, responsive markup with sass / less, grid, flexbox, bootstrap.</li>
+        <li>SPA applications using Vue.js, JavaScript (ES6, jQuery), Node.js.</li>
+        <li>UI / UX, web and interface design.</li>
+        <li>Landing page marketing sales funnels and split testing optimization.</li>
+        <li>Performance testing and analytics.</li>
       </ul>
       <a id="more-about" href="#about-me">More About Me</a>
     </div>
