@@ -35,7 +35,7 @@ if (!empty($_POST)){
 	if (!empty($errors)) { 
 	    $return['status'] = 'error';
 	    $return['message'] = $errors;  
-	}else{
+	} else{
 		// get the posted data 
 		$to = 'angel4ernandez@gmail.com';
 		$subject = 'Portfolio Contact Form Submission';
