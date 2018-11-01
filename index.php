@@ -47,25 +47,32 @@
       <div id="welcome-comp">
         <h1>Design, development & marketing.</h1>
       </div>
-      <p>Overview of what I do:</p>
-      <ul>
-        <li>Cross-functional, mobile first, responsive markup with sass / less, grid, flexbox, bootstrap.</li>
-        <li>SPA applications using Vue.js, JavaScript (ES6, jQuery), Node.js.</li>
-        <li>UI / UX, web and interface design.</li>
-        <li>Landing page marketing sales funnels and split testing optimization.</li>
-        <li>Performance testing and analytics.</li>
-      </ul>
-      <a id="more-about" href="#about-me">More About Me</a>
+      <p>I have a passion for creating applications that function with ease and serve to deliver a message in ways that are natural, intuitive and effortless.</p>
+      <p>My focus is Front End Engineering with an emphasis in user experience, pixel-perfect markup and strong javascript development.</p>
+      <p>I use design principles such as offline / mobile first, responsive, adaptive, progress enhancements, component based design, etc. to deliver up to date web and interface applications.</p>
+      <a id="more-about" href="#contact-me">Contact Me</a>
     </div>
     <div class="eight columns">
-      <div id="latest-website">
-        <h5>SabaSEO</h5>
-        <h6>Internet Marketing and SEO Services.</h6>
-        <img id="latest-icon" src="images/latest-website-icon.png" alt="Latest Website Icon">
-        <img id="latest-screenshot" src="images/latest-website.jpg" alt="Saba SEO - Latest Website">
-        <div id="latest-info">
-          <a href="http://www.sabaseo.com" target="_blank">www.SabaSEO.com</a>
-        </div>
+      <div id="skills-list">
+        <p class="skills-title">Design:</p>
+        <ul>
+          <li>Atomic design with sketch and adobe software.</li>
+          <li>UI / UX, web and interface design.</li>
+          <li>Planning, wireframing, style guide and corporate identity.</li>
+        </ul>
+        <p class="skills-title">Development:</p>
+        <ul>
+          <li>SPA applications using Vue.js, JavaScript (ES6, jQuery), Node.js.</li>
+          <li>Cross-functional, mobile first, responsive markup with sass / less, grid, flexbox, bootstrap.</li>
+          <li>REST API architecture, endpoint standardization and testing.</li>
+          <li>Performance testing and analytics.</li>
+          <li>DataTables, Laravel blade templating.</li>
+        </ul>
+        <p class="skills-title">Marketing:</p>
+        <ul>
+          <li>Paid media advertising</li>
+          <li>Landing page marketing sales funnels and split testing optimization.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -136,7 +143,7 @@
       <form action="php/scripts.php" method="post">
         <fieldset>
           <legend>
-            <h5>Thank you for viewing my portfolio!</h5>
+            <h5>Thank you for stopping by!</h5>
             <p>Please fill out the following form to contact me.</p>
           </legend>
           <p>

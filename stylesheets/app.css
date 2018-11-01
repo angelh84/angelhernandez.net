@@ -92,7 +92,7 @@ hr {
   margin-top: 15px;
 }
 #navigation-container nav {
-  width: 303px;
+  width: 203px;
   height: 55px;
   display: block;
   float: right;
@@ -158,6 +158,9 @@ hr#footer-line {
 /* -----------------------------------------
    Home
 ----------------------------------------- */
+#nav-about {
+  display: none;
+}
 #home-content {
   padding-top: 35px;
 }
@@ -222,40 +225,47 @@ hr#footer-line {
 #home-content a#more-about:active {
   background-position: 0 -56px;
 }
-#home-content #latest-website {
+#home-content #skills-list {
   position: relative;
   float: right;
   max-width: 595px;
   overflow: hidden;
+  margin-top: 45px;
 }
-#home-content #latest-website h5 {
+#home-content #skills-list ul {
+  margin-bottom: 20px;
+}
+#home-content .skills-title {
+  margin-bottom: 0;
+}
+#home-content #skills-list h5 {
   font-size: 18px;
   line-height: 18px;
   font-weight: bold;
 }
-#home-content #latest-website h6 {
+#home-content #skills-list h6 {
   font-size: 14px;
   line-height: 14px;
   color: #a4a4a4;
 }
-#home-content #latest-website img#latest-icon {
+#home-content #skills-list img#latest-icon {
   position: absolute;
   top: 34px;
   right: 10px;
 }
-#home-content #latest-website img#latest-screenshot {
+#home-content #skills-list img#latest-screenshot {
   display: block;
   margin-top: 7px;
 }
-#home-content #latest-website #latest-info {
+#home-content #skills-list #latest-info {
   width: 100%;
   height: 35px;
   padding-top: 7px;
 }
-#home-content #latest-website #latest-info a {
+#home-content #skills-list #latest-info a {
   float: left;
 }
-#home-content #latest-website #latest-info span {
+#home-content #skills-list #latest-info span {
   float: right;
   line-height: 14px;
   margin: 0;
@@ -811,7 +821,7 @@ div.portfolio-box h6 {
     font-size: 12px;
     line-height: 15px;
   }
-  #home-content #latest-website {
+  #home-content #skills-list {
     float: none;
   }
   #home-content #welcome-comp h2 {
@@ -861,13 +871,13 @@ div.portfolio-box h6 {
   #home-content {
     padding-top: 25px;
   }
-  #home-content #latest-website {
+  #home-content #skills-list {
     float: none;
     margin-top: 25px;
     padding-top: 25px;
     border-top: 1px solid #383838;
   }
-  #home-content #latest-website img#latest-icon {
+  #home-content #skills-list img#latest-icon {
     top: 59px;
   }
   #about-content {
@@ -930,7 +940,7 @@ div.portfolio-box h6 {
   #body-text-container {
     min-height: 1px;
   }
-  #home-content #latest-website {
+  #home-content #skills-list {
     display: none;
   }
   #contact-content fieldset {
