@@ -92,11 +92,11 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/component-library/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/ })
 /************************************************************************/
 /******/ ([]);
-//# sourceMappingURL=manifest.51b213fcfb2d8ebcb6dc.js.map
+//# sourceMappingURL=manifest.22541d6bfc7bdac855f6.js.map
