@@ -6,8 +6,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Angel Hernandez - Professional Website Design &amp; Development</title>
-  <meta name="description" content="Professional website design and development.  Branding and corporate identity, print design, graphic design, interface design.">
+  <title>Angel Hernandez - Website Design &amp; Development</title>
+  <meta name="description" content="Website design and development, branding and corporate identity, print design, graphic design, interface design.">
   
   <link rel="stylesheet" href="stylesheets/foundation.css">
   <link rel="stylesheet" href="stylesheets/app.css">
