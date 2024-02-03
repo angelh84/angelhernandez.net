@@ -11,15 +11,15 @@
   
   <link rel="stylesheet" href="stylesheets/foundation.css">
   <link rel="stylesheet" href="stylesheets/app.css">
-  <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
 
   <!-- Favicons
   ================================================== -->
-  <link rel="shortcut icon" href="http://angelsportfolio.com/images/favicon.ico">
-  <link rel="apple-touch-icon" href="http://angelsportfolio.com/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="http://angelsportfolio.com/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="http://angelsportfolio.com/images/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="http://angelsportfolio.com/images/apple-touch-icon-144x144.png" />
+  <link rel="shortcut icon" href="https://angelsportfolio.com/images/favicon.ico">
+  <link rel="apple-touch-icon" href="https://angelsportfolio.com/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://angelsportfolio.com/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://angelsportfolio.com/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://angelsportfolio.com/images/apple-touch-icon-144x144.png" />
 
   <script src="javascripts/modernizr.foundation.js"></script>
 </head>
@@ -105,28 +105,6 @@
         </ul>
       </div>
     </div>
-	<!--
-    <div class="four columns" id="experience-apts">
-      <p id="experience-spacer">&nbsp;</p>
-      <hr>
-      <div class="experience-box">
-        <h5>Apartments24-7.com</h5>
-        <span class="experience-subhead">Corporate Web Designer &amp; Developer</span>
-        <div class="experience-date">
-          <hr>
-          <span>Mar. 2006 - Jan. 2010</span>
-        </div>
-        <h6>OVERVIEW:</h6>
-        <p>Head of corporate development overseeing the production of  corporate websites for the multifamily industry.  Prior to this position, I was director of multimedia, where we produced video tours, DVD brochures, marketing presentations and managed web multimedia.</p>
-        <h6>DETAILS:</h6>
-        <ul>
-          <li>Contributed to the creation of new products such as the live chat web application and DVD brochures.</li>
-          <li>Implemented mobile friendly websites.</li>
-          <li>Designated company Spanish translator.</li>
-        </ul>
-      </div>
-    </div>
-	-->
   </div>
   <div class="row" id="contact-content">
     <div class="seven columns">
