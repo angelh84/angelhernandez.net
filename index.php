@@ -15,11 +15,11 @@
 
   <!-- Favicons
   ================================================== -->
-  <link rel="shortcut icon" href="https://angelsportfolio.net/images/favicon.ico">
-  <link rel="apple-touch-icon" href="https://angelsportfolio.net/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="https://angelsportfolio.net/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="https://angelsportfolio.net/images/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="https://angelsportfolio.net/images/apple-touch-icon-144x144.png" />
+  <link rel="shortcut icon" href="https://angelhernandez.net/images/favicon.ico">
+  <link rel="apple-touch-icon" href="https://angelhernandez.net/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://angelhernandez.net/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://angelhernandez.net/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://angelhernandez.net/images/apple-touch-icon-144x144.png" />
 
   <script src="javascripts/modernizr.foundation.js"></script>
 </head>
@@ -216,7 +216,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-51794663-1', 'angelsportfolio.net');
+  ga('create', 'UA-51794663-1', 'angelhernandez.net');
   ga('send', 'pageview');
 
 </script>
